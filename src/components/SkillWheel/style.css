@@ -1,3 +1,9 @@
-.test {
-    transform: scale(1.1);
+.skill-wheel__kusok {
+    /* transition: transform 0.35s; */
+}
+.skill-wheel__kusok:hover {
+    transform: scale(1.1) translate(-10px, -10px);
+}
+#use :host .skill-wheel__kusok {
+    transform: scale(1.1) translate(-10px, -10px);
 }
