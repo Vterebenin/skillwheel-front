@@ -2,6 +2,7 @@
   "name": "skillwheel",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://Vterebenin.github.io/skillwheel-front",
   "dependencies": {
     "antd": "^3.20.5",
     "react": "^16.8.6",
