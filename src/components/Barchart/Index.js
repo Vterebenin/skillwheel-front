@@ -17,7 +17,7 @@ class BarChartV1 extends React.Component {
 		}
 		this.color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.data.children.length + 1))
 		this.format = d3.format(",d")
-		this.width = 932
+		this.width = this.props.width;
 		this.radius = this.width / 6
 		this.arc = d3.arc()
 			.startAngle(d => d.x0)
