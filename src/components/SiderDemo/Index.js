@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import SkillWheel from '../SkillWheel/Index';
-
+import Barchart from '../Barchart/Index'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -74,6 +74,7 @@ class SiderDemo extends React.Component {
                             <Breadcrumb.Item>Bill</Breadcrumb.Item>
                         </Breadcrumb>
                         <SkillWheel />
+                        <Barchart />
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
                 </Layout>
