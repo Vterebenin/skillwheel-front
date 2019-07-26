@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/skillwheel-front/static/css/main.c4e1d5e8.chunk.css",
-    "main.js": "/skillwheel-front/static/js/main.189e1aed.chunk.js",
-    "main.js.map": "/skillwheel-front/static/js/main.189e1aed.chunk.js.map",
-    "runtime~main.js": "/skillwheel-front/static/js/runtime~main.63a98b00.js",
-    "runtime~main.js.map": "/skillwheel-front/static/js/runtime~main.63a98b00.js.map",
-    "static/css/2.676dc204.chunk.css": "/skillwheel-front/static/css/2.676dc204.chunk.css",
-    "static/js/2.02a2f73e.chunk.js": "/skillwheel-front/static/js/2.02a2f73e.chunk.js",
-    "static/js/2.02a2f73e.chunk.js.map": "/skillwheel-front/static/js/2.02a2f73e.chunk.js.map",
-    "index.html": "/skillwheel-front/index.html",
-    "precache-manifest.f1233cf9ce2590719da073fb258b5b9f.js": "/skillwheel-front/precache-manifest.f1233cf9ce2590719da073fb258b5b9f.js",
-    "service-worker.js": "/skillwheel-front/service-worker.js",
-    "static/css/2.676dc204.chunk.css.map": "/skillwheel-front/static/css/2.676dc204.chunk.css.map",
-    "static/css/main.c4e1d5e8.chunk.css.map": "/skillwheel-front/static/css/main.c4e1d5e8.chunk.css.map"
+    "main.css": "/skillwheel-front-alt/static/css/main.c4e1d5e8.chunk.css",
+    "main.js": "/skillwheel-front-alt/static/js/main.5f830c44.chunk.js",
+    "main.js.map": "/skillwheel-front-alt/static/js/main.5f830c44.chunk.js.map",
+    "runtime~main.js": "/skillwheel-front-alt/static/js/runtime~main.5c2dabfc.js",
+    "runtime~main.js.map": "/skillwheel-front-alt/static/js/runtime~main.5c2dabfc.js.map",
+    "static/css/2.676dc204.chunk.css": "/skillwheel-front-alt/static/css/2.676dc204.chunk.css",
+    "static/js/2.ae798c75.chunk.js": "/skillwheel-front-alt/static/js/2.ae798c75.chunk.js",
+    "static/js/2.ae798c75.chunk.js.map": "/skillwheel-front-alt/static/js/2.ae798c75.chunk.js.map",
+    "index.html": "/skillwheel-front-alt/index.html",
+    "precache-manifest.25b1c0f7e07372c47dbad11664008c13.js": "/skillwheel-front-alt/precache-manifest.25b1c0f7e07372c47dbad11664008c13.js",
+    "service-worker.js": "/skillwheel-front-alt/service-worker.js",
+    "static/css/2.676dc204.chunk.css.map": "/skillwheel-front-alt/static/css/2.676dc204.chunk.css.map",
+    "static/css/main.c4e1d5e8.chunk.css.map": "/skillwheel-front-alt/static/css/main.c4e1d5e8.chunk.css.map"
   }
 }
