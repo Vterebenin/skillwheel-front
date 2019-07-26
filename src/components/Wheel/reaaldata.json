@@ -1,0 +1,2308 @@
+{
+    "id": 3,
+    "name": "u0410u0431u0440u0430u043cu043eu0432 u0421u0435u0440u0433u0435u0439",
+    "date_of_employment": "2019-07-23",
+    "grade": "u043cu0430u0441u0442u0435u0440",
+    "areas": {
+        "1": {
+            "title": "u041eu0431u0449u0438u0435 u0437u043du0430u043du0438u044f u043e u043au043eu043cu043fu0430u043du0438u0438",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 1,
+                        "title": "u0418u0441u0442u043eu0440u0438u044f u043au043eu043cu043fu0430u043du0438u0438",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 2,
+                        "title": "u0417u043du0430u043du0438u0435 u0442u0440u0435u0431u043eu0432u0430u043du0438u0439 u0441u0438u0441u0442u0435u043cu044b u043cu0435u043du0435u0434u0436u043cu0435u043du0442u0430 u043au0430u0447u0435u0441u0442u0432u0430",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 3,
+                        "title": "u041du0430u0433u0440u0430u0434u044b u0438 u0440u0435u0439u0442u0438u043du0433u0438 u043au043eu043cu043fu0430u043du0438u0438",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 4,
+                        "title": "u041eu043du043bu0430u0439u043d-u0440u0435u0441u0443u0440u0441u044b u043au043eu043cu043fu0430u043du0438u0438",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 5,
+                        "title": "u0421u0442u0440u0443u043au0442u0443u0440u0430 u043au043eu043cu043fu0430u043du0438u0438",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 6,
+                        "title": "u0420u0443u043au043eu0432u043eu0434u0438u0442u0435u043bu0438 u043eu0442u0434u0435u043bu043eu0432",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 7,
+                        "title": "u041au043eu0440u043fu043eu0440u0430u0442u0438u0432u043du044bu0435 u043fu0440u0430u0432u0438u043bu0430",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 8,
+                        "title": "u0420u0435u0434u0430u043au0446u0438u043eu043du043du0430u044f u043fu043eu043bu0438u0442u0438u043au0430 u043au043eu043cu043fu0430u043du0438u0438",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 9,
+                        "title": "u041fu0440u0430u0432u0438u043bu0430 u0438u043du0444u043eu0440u043cu0430u0446u0438u043eu043du043du043eu0439 u0431u0435u0437u043eu043fu0430u0441u043du043eu0441u0442u0438",
+                        "description": null,
+                        "id_skill_area": 1
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                }
+            ],
+            "progress": 98,
+            "color": "#32CD32"
+        },
+        "2": {
+            "title": "u0412u043bu0430u0434u0435u043du0438u0435 u0431u0430u0437u043eu0432u044bu043cu0438 u0432u043du0443u0442u0440u0435u043du043du0438u043cu0438 u0441u0435u0440u0432u0438u0441u0430u043cu0438",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 10,
+                        "title": "Redmine",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 11,
+                        "title": "Canape CRM",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 12,
+                        "title": "Twinstat",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 13,
+                        "title": "kp.twinscom.ru",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 14,
+                        "title": "Canape ADS",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 15,
+                        "title": "Canape Sugar",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 16,
+                        "title": "Oktell",
+                        "description": null,
+                        "id_skill_area": 2
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 85,
+            "color": "#32CD32"
+        },
+        "3": {
+            "title": "u0412u043bu0430u0434u0435u043du0438u0435 u0431u0430u0437u043eu0432u044bu043cu0438 u0432u043du0435u0448u043du0438u043cu0438 u0441u0435u0440u0432u0438u0441u0430u043cu0438",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 17,
+                        "title": "u041du0430u0432u044bu043au0438 u0441u043bu0435u043fu043eu0439 u043fu0435u0447u0430u0442u0438",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 18,
+                        "title": "u041fu043eu0447u0442u043eu0432u044bu0435 u043au043bu0438u0435u043du0442u044b (u0441u043eu0440u0442u0438u0440u043eu0432u043au0430 u043fu0438u0441u0435u043c, u043du0430u0441u0442u0440u043eu0439u043au0430 u043fu043eu0434u043fu0438u0441u0438)",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 19,
+                        "title": "u0422u0435u043au0441u0442u043eu0432u044bu0435 u0440u0435u0434u0430u043au0442u043eu0440u044b (Word, Google Docs)",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 20,
+                        "title": "u0422u0430u0431u043bu0438u0446u044b (Exel, Google)",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 21,
+                        "title": "Google u041au0430u043bu0435u043du0434u0430u0440u044c",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 22,
+                        "title": "u042fu043du0434u0435u043au0441 u0414u0438u0441u043a + u0421u0440u0438u043du0448u043eu0442u044b",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 23,
+                        "title": "u0413u0440u0430u0444u0438u0447u0435u0441u043au0438u0435 u0440u0435u0434u0430u043au0442u043eu0440u044b",
+                        "description": null,
+                        "id_skill_area": 3
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                }
+            ],
+            "progress": 90,
+            "color": "#32CD32"
+        },
+        "4": {
+            "title": "u0414u043eu043au0443u043cu0435u043du0442u043eu043eu0431u043eu0440u043eu0442 u0438 u0440u0435u0433u043bu0430u043cu0435u043du0442u044b",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 24,
+                        "title": "u0421u043eu0441u0442u0430u0432u043bu0435u043du0438u0435 u0434u043eu0433u043eu0432u043eu0440u043eu0432 u0438 u043fu0440u0438u043bu043eu0436u0435u043du0438u0439",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 25,
+                        "title": "u0412u044bu0441u0442u0430u0432u043bu0435u043du0438u0435 u0441u0447u0435u0442u043eu0432 u0438 u043au043eu043du0442u0440u043eu043bu044c u043eu043fu043bu0430u0442",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 26,
+                        "title": "u041fu043eu043fu043eu043bu043du0435u043du0438u0435 u0431u0430u043bu0430u043du0441u043eu0432 u0440u0435u043au043bu0430u043cu043du044bu0445 u0441u0438u0441u0442u0435u043c",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 27,
+                        "title": "u0421u043bu0443u0436u0435u0431u043du044bu0435 u043fu0438u0441u044cu043cu0430 u0438 u0437u0430u043fu0438u0441u043au0438",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 28,
+                        "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u043fu0440u043e u041du0414u0421",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 29,
+                        "title": "u0412u043eu0437u0432u0440u0430u0442 u0434u0435u043du0435u0433",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 30,
+                        "title": "u0420u0430u0431u043eu0442u0430 u0441 u0434u043eu043bu0436u043du0438u043au0430u043cu0438",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 31,
+                        "title": "u041eu0442u043fu0443u0441u043au0430 u0438 u043eu0442u0433u0443u043bu044b",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 32,
+                        "title": "u0411u0430u0437u043eu0432u044bu0439 u0440u0435u0433u043bu0430u043cu0435u043du0442 u0441u043eu0442u0440u0443u0434u043du0438u043au0430",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 33,
+                        "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u0435 u0440u0435u0433u043bu0430u043cu0435u043du0442u043eu0432 u0441u043cu0435u0436u043du044bu0445 u043eu0442u0434u0435u043bu043eu0432",
+                        "description": null,
+                        "id_skill_area": 4
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                }
+            ],
+            "progress": 86,
+            "color": "#32CD32"
+        },
+        "5": {
+            "title": "u0417u043du0430u043du0438u0435 u0438 u043fu043eu043du0438u043cu0430u043du0438u0435 u043fu0440u043eu0434u0443u043au0442u043eu0432u043eu0439 u043bu0438u043du0435u0439u043au0438 u043au043eu043cu043fu0430u043du0438u0438n(u043fu0440u0438u043du0446u0438u043f u0440u0430u0431u043eu0442u044b, u043au043eu043cu0443 u043fu043eu0434u0445u043eu0434u0438u0442, u043eu0441u043du043eu0432u043du044bu0435 u0432u043eu0437u0440u0430u0436u0435u043du0438u044f, u043fu0440u0438u043cu0435u0440u044b u043fu0440u043eu0435u043au0442u043eu0432, u0446u0435u043du043eu043eu0431u0440u0430u043eu0432u0430u043du0438u0435, u0441u0440u043eu043au0438, u0433u0430u0440u0430u043du0442u0438u0438, u043au0442u043e u0438u0441u043fu043eu043bu043du0438u0442u0435u043bu044c)",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 34,
+                        "title": "u0420u0430u0437u0440u0430u0431u043eu0442u043au0430 u0441u0430u0439u0442u043eu0432",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 35,
+                        "title": "u0424u0438u0440u043cu0435u043du043du044bu0439 u0441u0442u0438u043bu044c u0438 u043fu0440u0435u0437u0435u043du0442u0430u0446u0438u0438",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 36,
+                        "title": "u0412u0441u0435 u0432u0438u0434u044b u0430u0443u0434u0438u0442u043eu0432",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 37,
+                        "title": "u041au043eu043du0442u0435u043au0441u0442u043du0430u044f u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 38,
+                        "title": "u0422u043eu0432u0430u0440u043du0430u044f u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 39,
+                        "title": "u041cu0435u0434u0438u0439u043du0430u044f u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 40,
+                        "title": "u0422u0430u0440u0433u0435u0442u0438u0440u043eu0432u0430u043du043du0430u044f u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 41,
+                        "title": "u0412u0438u0434u0435u043e u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 42,
+                        "title": "SEO u043fu0440u043eu0434u0432u0438u0436u0435u043du0438u0435",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 43,
+                        "title": "SMM",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 44,
+                        "title": "u041au043eu043du0442u0435u043du0442-u043cu0430u0440u043au0435u0442u0438u043du0433",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 45,
+                        "title": "u0425u043eu0441u0442u0438u043du0433",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 46,
+                        "title": "u0422u0435u0445u043fu043eu0434u0434u0435u0440u0436u043au0430",
+                        "description": null,
+                        "id_skill_area": 5
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                }
+            ],
+            "progress": 83,
+            "color": "#32CD32"
+        },
+        "6": {
+            "title": "u041cu0435u043du0435u0434u0436u0435u0440u0441u043au0438u0435 u0437u043du0430u043du0438u044f",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 47,
+                        "title": "u041du0430u0432u044bu043a u0443u043fu0440u0430u0432u043bu0435u043du0438u044f u043fu0440u043eu0435u043au0442u0430u043cu0438",
+                        "description": null,
+                        "id_skill_area": 6
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 48,
+                        "title": "u0412u0435u0434u0435u043du0438u0435 u0434u0435u043bu043eu0432u043eu0439 u043fu0435u0440u0435u043fu0438u0441u043au0438",
+                        "description": null,
+                        "id_skill_area": 6
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 49,
+                        "title": "u0422u0435u0445u043du0438u043au0430 u043fu0443u0441u0442u043eu0433u043e u0438u043du0431u043eu043au0441u0430",
+                        "description": null,
+                        "id_skill_area": 6
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 50,
+                        "title": "u0412u0435u0434u0435u043du0438u0435 u0442u0435u043bu0435u0444u043eu043du043du044bu0445 u043fu0435u0440u0435u0433u043eu0432u043eu0440u043eu0432",
+                        "description": null,
+                        "id_skill_area": 6
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 51,
+                        "title": "u041du0430u0432u044bu043au0438 u043fu0440u043eu0434u0430u0436",
+                        "description": null,
+                        "id_skill_area": 6
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                }
+            ],
+            "progress": 83,
+            "color": "#32CD32"
+        },
+        "7": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u043fu043e u0430u043du0430u043bu0438u0442u0438u043au0435",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 52,
+                        "title": "u042fu043du0434u0435u043au0441 u041cu0435u0442u0440u0438u043au0430 (u043fu043eu043bu0443u0447u0435u043d u0441u0435u0440u0442u0438u0444u0438u043au0430u0442)",
+                        "description": null,
+                        "id_skill_area": 7
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 53,
+                        "title": "Google Analytics (u043fu043eu043bu0443u0447u0435u043d u0441u0435u0440u0442u0438u0444u0438u043au0430u0442)",
+                        "description": null,
+                        "id_skill_area": 7
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 54,
+                        "title": "u041au043eu043bu0442u0440u0435u043au0438u043du0433 Callibri",
+                        "description": null,
+                        "id_skill_area": 7
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 55,
+                        "title": "u041au043eu043bu0442u0440u0435u043au0438u043du0433 CallTouch",
+                        "description": null,
+                        "id_skill_area": 7
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 56,
+                        "title": "RoiStat",
+                        "description": null,
+                        "id_skill_area": 7
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 57,
+                        "title": "Comagic",
+                        "description": null,
+                        "id_skill_area": 7
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 61,
+            "color": "#FFD700"
+        },
+        "8": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u043fu0440u043e WEB",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 58,
+                        "title": "u0423u043cu0435u043du0438u0435 u0440u0430u0437u0440u0430u0431u0430u0442u044bu0432u0430u0442u044c u0438 u043fu0440u043eu0442u043eu0442u0438u043fu0438u0440u043eu0432u0430u0442u044c u043fu043eu043bu044cu0437u043eu0432u0430u0442u0435u043bu044cu0441u043au0438u0435 u0438u043du0442u0435u0440u0444u0435u0439u0441u044b",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 59,
+                        "title": "u0417u043du0430u043du0438u0435 u043eu0441u043du043eu0432u043du044bu0445 u043fu0440u0438u043du0446u0438u043fu043eu0432 u044eu0437u0430u0431u0438u043bu0438u0442u0438 u0441u0430u0439u0442u043eu0432",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 60,
+                        "title": "u0420u0430u0437u043bu0438u0447u0438u0435 u0432 backend u0438 frontend",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 61,
+                        "title": "u0425u043eu0441u0442u0438u043du0433n- u0442u0438u043fu044b u0445u043eu0441u0442u0438u043du0433u043eu0432n- u043fu0440u043eu0432u0435u0440u043au0430 u0445u043eu0441u0442u0438u043du0433u043eu0432",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 62,
+                        "title": "u0414u043eu043cu0435u043du044bn- u0441u0435u0440u0432u0438u0441u044b WHOISn- u043fu0440u043eu0432u0435u0440u043au0430 u0438 u043du0430u0441u0442u0440u043eu043au0430 u0437u0430u043fu0438u0441u0435u0439",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 63,
+                        "title": "FTP u0438 SSH",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 64,
+                        "title": "u0414u043eu043cu0435u043du043du0430u044f u043fu043eu0447u0442u0430n- u043du0430u0441u0442u0440u043eu0439u043au0430 u0434u043eu043cu0435u043du043du043eu0439 u043fu043eu0447u0442u044b",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 65,
+                        "title": "SSL u0438 HTTPSn- u0443u043cu0435u043du0438u0435 u0432u044bu0431u0440u0430u0442u044c u043du0443u0436u043du044bu0439 u0441u0435u0440u0442u0438u0444u0438u043au0430u0442n- u043fu043eu0434u043au043bu044eu0447u0435u043du0438u0435 u043du0430 u0441u0430u0439u0442",
+                        "description": null,
+                        "id_skill_area": 8
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                }
+            ],
+            "progress": 100,
+            "color": "#32CD32"
+        },
+        "9": {
+            "title": "u0417u043du0430u043du0438u0435 Canape CMS ",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 66,
+                        "title": "u0420u0430u0431u043eu0442u0430 u0441 u0440u0435u0434u0430u043au0442u043eu0440u043eu043c:n- u0440u0430u0431u043eu0442u0430 u0441 u0442u0435u043au0441u0442u043eu043cn- u0440u0430u0431u043eu0442u0430 u0441 u0442u0430u0431u043bu0438u0446u0430u043cu0438n- u0440u0430u0431u043eu0442u0430 u0441 u0438u0437u043eu0431u0440u0430u0436u0435u043du0438u044fu043cu0438n- u0441u0442u0438u043bu0438 u043eu0444u043eu0440u043cu043bu0435u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 9
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 67,
+                        "title": "u0420u0430u0431u043eu0442u0430 u0441 u043eu0441u043du043eu0432u043du044bu043cu0438 u043cu043eu0434u0443u043bu044fu043cu0438:n- u0433u0430u043bu0435u0440u0435u044f- u0441u043bu0430u0439u0434u0435u0440n- u043au0430u0442u0430u043bu043eu0433n- u0444u043eu0440u043cu044bn- u0431u044du043au0430u043fu0438u0440u043eu0432u0430u043du0438u0435n- u042f.u041cu0430u0440u043au0435u0442n- u043au043eu0440u0437u0438u043du0430 u0437u0430u043au0430u0437u0430n- u043bu0438u0447u043du044bu0439 u043au0430u0431u0438u043du0435u0442n- u043du043eu0432u043eu0441u0442u0438, u0441u0442u0430u0442u044cu0438",
+                        "description": null,
+                        "id_skill_area": 9
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 68,
+                        "title": "u0420u0430u0431u043eu0442u0430 u0441 SEO u043du0430u0441u0442u0440u043eu0439u043au0430u043cu0438:n- u0431u0430u0437u043eu0432u044bu0435 u043du0430u0441u0442u0440u043eu0439u043au0438n- SEO-u043fu043eu043bu044fn- SEO-u0448u0430u0431u043bu043eu043du044bn- u0438u043cu043fu043eu0440u0442-u044du043au0441u043fu043eu0440u0442 SEOn- u0420u0435u0434u0438u0440u0435u043au0442u044bn- robots.txt",
+                        "description": null,
+                        "id_skill_area": 9
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 69,
+                        "title": "u0418u043du0442u0435u0433u0440u0430u0446u0438u043eu043du043du044bu0435 u043cu043eu0434u0443u043bu0438:n- u043eu043du043bu0430u0439u043d-u043fu043bu0430u0442u0435u0436u0438n- u0441u0435u0440u0432u0438u0441u044b u0440u0430u0441u0447u0435u0442u0430 u0434u043eu0441u0442u0430u0432u043au0438 (u043du0435u0442)n- 1u0421- u0432u0438u0434u0436u0435u0442u044bn- CRM (u043du0435u0442)n- u0434u043eu0441u0442u0443u043fu044bn- u043fu043eu043bu0438u0442u0438u043au0438 u0434u043eu0441u0442u0443u043fu043eu0432",
+                        "description": null,
+                        "id_skill_area": 9
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 70,
+                        "title": "u041eu0433u0440u0430u043du0438u0447u0435u043du0438u044f u043fu043bu0430u0442u0444u043eu0440u043cu044b:n- u0442u0440u0435u0431u043eu0432u0430u043du0438u044f u043a u0445u043eu0441u0442u0438u043du0433u0443n- u043cu0430u043au0441u0438u043cu0430u043bu044cu043du043eu0435 u043au043eu043bu0438u0447u0435u0441u0442u0432u043e u0440u0430u0437u0434u0435u043bu043eu0432n- u043eu0433u0440u0430u043du0438u0447u0435u043du0438u044f u043fu043e u043fu043eu043bu044cu0437u043eu0432u0430u0442u0435u043bu044cu0441u043au0438u043c u043du0430u0433u0440u0443u0437u043au0430u043cn- u043cu0430u043au0441u0438u043cu0430u043bu044cu043du043eu0435 u043au043eu043bu0438u0447u0435u0441u0442u0432u043e u044du043bu0435u043cu0435u043du0442u043eu0432 u043au0430u0442u0430u043bu043eu0433u0430n- u043eu0433u0440u0430u043du0438u0447u0435u043du0438u044f u043fu043e u0444u0430u0439u043bu0430u043c u0432u044bu0433u0440u0443u0437u043au0438n- u043eu0433u0440u0430u043du0438u0447u0435u043du0438u044f u043fu043e u0438u043du0442u0435u0433u0440u0430u0446u0438u044fu043c u0441 u0432u043du0435u0448u043du0438u043cu0438 u0441u0435u0440...",
+                        "description": null,
+                        "id_skill_area": 9
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                }
+            ],
+            "progress": 96,
+            "color": "#32CD32"
+        },
+        "10": {
+            "title": "u0417u043du0430u043du0438u0435 u0434u0440u0443u0433u0438u0445 CSM ",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 71,
+                        "title": "1u0421 u0411u0438u0442u0440u0438u043au0441n- u0431u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u0438u043du0442u0435u0440u0444u0435u0439u0441u0430n- u0431u0430u0437u043eu0432u044bu0435 SEO-u043du0430u0441u0442u0440u043eu0439u043au0438 n- u043du0430u0441u0442u0440u043eu0439u043au0430 u043cu0435u0442u0440u0438u043a u0438 u0446u0435u043bu0435u0439n- u0442u0438u043fu043eu0432u044bu0435 u043cu043eu0434u0443u043bu0438",
+                        "description": null,
+                        "id_skill_area": 10
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 72,
+                        "title": "u0421u0435u0440u0442u0438u0444u0438u043au0430u0442 u043fu043e  1C Bitrix - u043fu043e u043au043eu043du0442u0435u043du0442u0443",
+                        "description": null,
+                        "id_skill_area": 10
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 73,
+                        "title": "u0421u0435u0440u0442u0438u0444u0438u043au0430u0442 1C Bitrix - u043fu043e u0430u0434u043cu0438u043du0438u0441u0442u0440u0438u0440u043eu0432u0430u043du0438u044e",
+                        "description": null,
+                        "id_skill_area": 10
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 74,
+                        "title": "WordPressn- u0431u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u0438u043du0442u0435u0440u0444u0435u0439u0441u0430n- u0431u0430u0437u043eu0432u044bu0435 SEO-u043du0430u0441u0442u0440u043eu0439u043au0438 n- u043du0430u0441u0442u0440u043eu0439u043au0430 u043cu0435u0442u0440u0438u043a u0438 u0446u0435u043bu0435u0439n- u0442u0438u043fu043eu0432u044bu0435 u043cu043eu0434u0443u043bu0438",
+                        "description": null,
+                        "id_skill_area": 10
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 75,
+                        "title": "Tildan- u0431u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u0438u043du0442u0435u0440u0444u0435u0439u0441u0430n- u0431u0430u0437u043eu0432u044bu0435 SEO-u043du0430u0441u0442u0440u043eu0439u043au0438 n- u043du0430u0441u0442u0440u043eu0439u043au0430 u043cu0435u0442u0440u0438u043a u0438 u0446u0435u043bu0435u0439n",
+                        "description": null,
+                        "id_skill_area": 10
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 56,
+            "color": "#FFD700"
+        },
+        "11": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u043fu043e SEOn",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 76,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0440u0430u0431u043eu0442u044b u043fu043eu0438u0441u043au043eu0432u044bu0445 u0441u0438u0441u0442u0435u043c",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 77,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0440u0430u043du0436u0438u0440u043eu0432u0430u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 78,
+                        "title": "u0410u043bu0433u043eu0440u0438u0442u043cu044b u043fu043eu0438u0441u043au043eu0432u044bu0445 u0441u0438u0441u0442u0435u043c",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 79,
+                        "title": "u041fu0430u0440u0430u043cu0435u0442u0440u044b u0442u0435u0445u043du0438u0447u0435u0441u043au043eu0439 u043eu043fu0442u0438u043cu0438u0437u0430u0446u0438u0438",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 80,
+                        "title": "u041fu0430u0440u0430u043cu0435u0442u0440u044b u0432u043du0435u0448u043du0435u0439 u043eu043fu0442u0438u043cu0438u0437u0430u0446u0438u0438",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 81,
+                        "title": "u0417u0430u043fu0440u0435u0449u0435u043du043du044bu0435 u043cu0435u0442u043eu0434u044b u0432 SEO",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 82,
+                        "title": "u042du043au0441u043fu0440u0435u0441u0441-u0430u0443u0434u0438u0442 u0441u0430u0439u0442u0430",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 83,
+                        "title": "KPI u0432 SEO",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 84,
+                        "title": "u042fu043du0434u0435u043au0441 u0412u0435u0431u043cu0430u0441u0442u0435u0440",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 85,
+                        "title": "Google Webmaster",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 86,
+                        "title": "Screaming Frog",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 87,
+                        "title": "Allpositions",
+                        "description": null,
+                        "id_skill_area": 11
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                }
+            ],
+            "progress": 94,
+            "color": "#32CD32"
+        },
+        "12": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u043au043eu043du0442u0435u043au0441u0442u043du043eu0439 u0440u0435u043au043bu0430u043cu044bn",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 88,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0440u0430u0431u043eu0442u044b u0440u0435u043au043bu0430u043cu043du044bu0445 u0441u0438u0441u0442u0435u043c",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 89,
+                        "title": "u0422u0438u043fu044b u0440u0435u043au043bu0430u043cu043du044bu0445 u043au0430u043cu043fu0430u043du0438u0439 (u043fu043eu0438u0441u043a, u0420u0421u042f, u041au041cu0421)",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 90,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0446u0435u043du043eu043eu0431u0440u0430u0437u043eu0432u0430u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 91,
+                        "title": "u042fu043du0434u0435u043au0441 u0412u043eu0440u0434u0441u0442u0430u0442",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 92,
+                        "title": "u042fu043du0434u0435u043au0441 u041fu0440u043eu0433u043du043eu0437 u0411u044eu0434u0436u0435u0442u0430",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 93,
+                        "title": "u0420u0435u043au043bu0430u043cu043du044bu0439 u043au0430u0431u0438u043du0435u0442 u042fu043du0434u0435u043au0441 u0414u0438u0440u0435u043au0442",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 94,
+                        "title": "u0420u0435u043au043bu0430u043cu043du044bu0439 u043au0430u0431u0438u043du0435u0442 Google ADS",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 95,
+                        "title": "u041fu043eu043fu043eu043bu043du0435u043du0438u0435 u0431u0430u043bu0430u043du0441u043eu0432, u043eu0442u0447u0435u0442u043du044bu0435 u0434u043eu043au0443u043cu0435u043du0442u044b",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 96,
+                        "title": "u0412u044bu0434u0430u0447u0430 u0434u043eu0441u0442u0443u043fu043eu0432",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 97,
+                        "title": "u0410u043du0430u043bu0438u0437 u0440u0435u043au043bu0430u043cu044b u0432 u042f.u041cu0435u0442u0440u0438u043au0435",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 98,
+                        "title": "Google Shopping",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 99,
+                        "title": "u041cu0435u0434u0438u0439u043du0430u044f u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 100,
+                        "title": "u0412u0438u0434u0435u043e u0440u0435u043au043bu0430u043cu0430",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 101,
+                        "title": "u042fu043du0434u0435u043au0441 u041cu0430u0440u043au0435u0442",
+                        "description": null,
+                        "id_skill_area": 12
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                }
+            ],
+            "progress": 73,
+            "color": "#FFD700"
+        },
+        "13": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u0442u0430u0440u0433u0435u0442u0438u0440u043eu0432u0430u043du043du043eu0439 u0440u0435u043au043bu0430u043cu044bn",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 102,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0440u0430u0431u043eu0442u044b u0440u0435u043au043bu0430u043cu043du044bu0445 u0441u0438u0441u0442u0435u043c",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 103,
+                        "title": "u0422u0438u043fu044b u0440u0435u043au043bu0430u043cu043du044bu0445 u043au0430u043cu043fu0430u043du0438u0439",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 104,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0446u0435u043du043eu043eu0431u0440u0430u0437u043eu0432u0430u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 105,
+                        "title": "u0412u043eu0437u043cu043eu0436u043du043eu0441u0442u0438 u0442u0430u0440u0433u0435u0442u0438u0440u043eu0432u0430u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 106,
+                        "title": "u0411u0430u0437u043eu0432u044bu0435 u0442u0440u0435u0431u043eu0432u0430u043du0438u044f u043a u043au0430u0447u0435u0441u0442u0432u0443 u0440u0435u043au043bu0430u043cu043du044bu0445 u043au0430u043cu043fu0430u043du0438u0439",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 107,
+                        "title": "u0420u0435u043au043bu0430u043cu043du044bu0439 u043au0430u0431u0438u043du0435u0442 u0412u041a",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 108,
+                        "title": "u0420u0435u043au043bu0430u043cu043du044bu0439 u043au0430u0431u0438u043du0435u0442 Facebook",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 109,
+                        "title": "u0420u0435u043au043bu0430u043cu043du044bu0439 u043au0430u0431u0438u043du0435u0442 MyTarget",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 110,
+                        "title": "u041fu0440u043eu0432u0435u0440u043au0430 u0431u0430u043bu0430u043du0441u043eu0432",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 111,
+                        "title": "u041eu0442u0447u0435u0442u044b u043fu043e u0440u0435u043au043bu0430u043cu0435",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 112,
+                        "title": "u0412u044bu0434u0430u0447u0430 u0434u043eu0441u0442u0443u043fu043eu0432",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 113,
+                        "title": "u0422u0430u0440u0433u0435u0442-u043fu043bu0430u0442u0444u043eu0440u043cu0430 u0412u041a",
+                        "description": null,
+                        "id_skill_area": 13
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 68,
+            "color": "#FFD700"
+        },
+        "14": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f SMMn",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 114,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0446u0435u043du043eu043eu0431u0440u0430u0437u043eu0432u0430u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 14
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 115,
+                        "title": "u0411u0430u0437u043eu0432u044bu0435 u0442u0440u0435u0431u043eu0432u0430u043du0438u044f u043a u043eu0444u043eu0440u043cu043bu0435u043du0438u044e",
+                        "description": null,
+                        "id_skill_area": 14
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 116,
+                        "title": "u0420u0435u0433u0438u0441u0442u0440u0430u0446u0438u044f u0441u043eu043eu0431u0449u0435u0441u0442u0432u043e u0438 u0432u044bu0434u0430u0447u0430 u0434u043eu0441u0442u0443u043fu043eu0432",
+                        "description": null,
+                        "id_skill_area": 14
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 117,
+                        "title": "u0423u0441u043fu0435u0448u043du044bu0435 u043au0435u0439u0441u044b u0438 u043fu0440u0438u043cu0435u0440u044b",
+                        "description": null,
+                        "id_skill_area": 14
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 74,
+            "color": "#FFD700"
+        },
+        "15": {
+            "title": "u0411u0430u0437u043eu0432u044bu0435 u0437u043du0430u043du0438u044f u043au043eu043du0442u0435u043du0442-u043cu0430u0440u043au0435u0442u0438u043du0433u0430n",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 118,
+                        "title": "u041fu0440u0438u043du0446u0438u043fu044b u0446u0435u043du043eu043eu0431u0440u0430u0437u043eu0432u0430u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 15
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 119,
+                        "title": "u0422u0440u0435u0431u043eu0432u0430u043du0438u044f u043a u043au0430u0447u0435u0441u0442u0432u0443 u043au043eu043du0442u0435u043du0442u0430",
+                        "description": null,
+                        "id_skill_area": 15
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 120,
+                        "title": "u0423u0441u043fu0435u0448u043du044bu0435 u043au0435u0439u0441u044b u0438 u043fu0440u0438u043cu0435u0440u044b",
+                        "description": null,
+                        "id_skill_area": 15
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 121,
+                        "title": "PUSH-u0443u0432u0435u0434u043eu043cu043bu0435u043du0438u044f",
+                        "description": null,
+                        "id_skill_area": 15
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 122,
+                        "title": "Email-u043cu0430u0440u043au0435u0442u0438u043du0433",
+                        "description": null,
+                        "id_skill_area": 15
+                    },
+                    "level": {
+                        "title": "u041fu043eu043bu044cu0437u043eu0432u0430u043bu0441u044f",
+                        "description": null,
+                        "priority": 5,
+                        "color": "#FFD700",
+                        "percent": 83
+                    }
+                }
+            ],
+            "progress": 83,
+            "color": "#32CD32"
+        },
+        "16": {
+            "title": "u041au043du0438u0433u0438 u043fu043e u043fu0435u0440u0435u0433u043eu0432u043eu0440u0430u043c",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 123,
+                        "title": "u041du043eu0432u044bu0435 u043fu0440u0430u0432u0438u043bu0430 u0434u0435u043bu043eu0432u043eu0439 u043fu0435u0440u0435u043fu0438u0441u043au0438, u041cu0430u043au0441u0438u043c u0418u043bu044cu044fu0445u043eu0432",
+                        "description": null,
+                        "id_skill_area": 16
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 124,
+                        "title": "u0421u043du0430u0447u0430u043bu0430 u0441u043au0430u0436u0438u0442u0435 u00abu043du0435u0442u00bb, u0414u0436u0438u043c u041au044du043cu043f",
+                        "description": null,
+                        "id_skill_area": 16
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 125,
+                        "title": "u041eu0442u0447u0430u044fu043du043du044bu0435 u0430u043au043au0430u0443u043du0442-u043cu0435u043du0435u0434u0436u0435u0440u044b, u0411u043eu0440u0438u0441 u0428u043fu0438u0440u0442",
+                        "description": null,
+                        "id_skill_area": 16
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 126,
+                        "title": "u041au0440u0435u043cu043bu0435u0432u0441u043au0430u044f u0448u043au043eu043bu0430 u043fu0435u0440u0435u0433u043eu0432u043eu0440u043eu0432, u0418u0433u043eu0440u044c u0420u044bu0437u043eu0432",
+                        "description": null,
+                        "id_skill_area": 16
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 50,
+            "color": "#FFD700"
+        },
+        "17": {
+            "title": "u041au043du0438u0433u0438 u043fu043e u043fu0440u043eu0434u0430u0436u0430u043c",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 127,
+                        "title": "45 u0442u0430u0442u0443u0438u0440u043eu0432u043eu043a u043fu0440u043eu0434u0430u0432u0430u043du0430, u041cu0430u043au0441u0438u043c u0411u0430u0442u044bu0440u0435u0432",
+                        "description": null,
+                        "id_skill_area": 17
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 128,
+                        "title": "u0421u041fu0418u041d-u043fu0440u043eu0434u0430u0436u0438, u041du0438u043b u0420u0435u043au0445u044du043c",
+                        "description": null,
+                        "id_skill_area": 17
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 129,
+                        "title": "u041cu0430u0441u0442u0435u0440 u0437u0432u043eu043du043au0430. - u041au0430u043a u043eu0431u044au044fu0441u043du044fu0442u044c, u0443u0431u0435u0436u0434u0430u0442u044c, u043fu0440u043eu0434u0430u0432u0430u0442u044c u043fu043e u0442u0435u043bu0435u0444u043eu043du0443? u0415u0432u0433u0435u043du0438u0439 u0416u0438u0433u0438u043bu0438",
+                        "description": null,
+                        "id_skill_area": 17
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 50,
+            "color": "#FFD700"
+        },
+        "18": {
+            "title": "u041au043du0438u0433u0438 u043fu043e u043cu0430u0440u043au0435u0442u0438u043du0433u0443",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 130,
+                        "title": "u041eu0441u043du043eu0432u044b u043cu0430u0440u043au0435u0442u0438u043du0433u0430, u0424u0438u043bu0438u043fu043f u041au043eu0442u043bu0435u0440",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u0425u043eu0440u043eu0448u043e",
+                        "description": null,
+                        "priority": 6,
+                        "color": "#32CD32",
+                        "percent": 100
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 131,
+                        "title": "u041au043bu0438u0435u043du0442u044b u043du0430 u0432u0441u044e u0436u0438u0437u043du044c, u041au0430u0440u043b u0421u044cu044eu044du043bu043b, u041fu043eu043b u0411u0440u0430u0443u043d",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 132,
+                        "title": "u041cu0430u0440u043au0435u0442u0438u043du0433 u0431u0435u0437 u0431u044eu0434u0436u0435u0442u0430. 50 u0440u0430u0431u043eu0442u0430u044eu0449u0438u0445 u0438u043du0441u0442u0440u0443u043cu0435u043du0442u043eu0432, u0418u0433u043eu0440u044c u041cu0430u043du043d",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 133,
+                        "title": "u0421u043eu0433u043bu0430u0441u043eu0432u0430u043du043e!  u041au0430u043a u043fu043eu0432u044bu0441u0438u0442u044c u0434u043eu0445u043eu0434u044b u043au043eu043cu043fu0430u043du0438u0438..., u041c.u0411u0430u0442u044bu0440u0435u0432",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 134,
+                        "title": "u041eu0433u0438u043bu0432u0438 u043e u0440u0435u043au043bu0430u043cu0435, u0414u044du0432u0438u0434 u041eu0433u0438u043bu0432u0438",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 135,
+                        "title": "u041cu0430u0440u043au0435u0442u0438u043du0433 u0431u0435u0437 u0434u0438u043fu043bu043eu043cu0430. u041fu0440u043eu0441u0442u043e u0438 u043fu0440u0430u043au0442u0438u0447u043du043e, u0414u0436u043eu043d u042fu043du0447",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 136,
+                        "title": "u041au0430u043a u0443u0446u0435u043bu0435u0442u044c u0441u0440u0435u0434u0438 u0430u043au0443u043b, u0425u0430u0440u0432u0438 u041cu0430u043au043au0435u0439",
+                        "description": null,
+                        "id_skill_area": 18
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 57,
+            "color": "#FFD700"
+        },
+        "19": {
+            "title": "u041au043du0438u0433u0438 u043fu043e u043cu0435u043du0435u0434u0436u043cu0435u043du0442u0443 u0438 u0443u043fu0440u0430u0432u043bu0435u043du0438u044e",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 137,
+                        "title": "Deadline. u0420u043eu043cu0430u043d u043eu0431 u0443u043fu0440u0430u0432u043bu0435u043du0438u0438 u043fu0440u043eu0435u043au0442u0430u043cu0438, u0422u043eu043c u0414u0435u041cu0430u0440u043au043e",
+                        "description": null,
+                        "id_skill_area": 19
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 138,
+                        "title": "SCRUM - u0420u0435u0432u043eu043bu044eu0446u0438u043eu043du043du044bu0439 u043cu0435u0442u043eu0434 u0443u043fu0440u0430u0432u043bu0435u043du0438u044f u043fu0440u043eu0435u043au0442u0430u043cu0438",
+                        "description": null,
+                        "id_skill_area": 19
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 139,
+                        "title": "u041fu044fu0442u044c u043fu043eu0440u043eu043au043eu0432 u043au043eu043cu0430u043du0434u044b. u041fu0440u0438u0442u0447u0438 u043e u043bu0438u0434u0435u0440u0441u0442u0432u0435, u041fu0430u0442u0440u0438u043a u041bu0435u043du0441u0438u043eu043du0438",
+                        "description": null,
+                        "id_skill_area": 19
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 140,
+                        "title": "45 u0442u0430u0442u0443u0438u0440u043eu0432u043eu043a u043cu0435u043du0435u0434u0436u0435u0440u0430, u041cu0430u043au0441u0438u043c u0411u0430u0442u044bu0440u0435u0432",
+                        "description": null,
+                        "id_skill_area": 19
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 141,
+                        "title": "u0411u0435u0437 u0432u043eu0434u044b. u041au0430u043a u043fu0438u0441u0430u0442u044c u043fu0440u0435u0434u043bu043eu0436u0435u043du0438u044f u0438 u043eu0442u0447u0435u0442u044b u0434u043bu044f u043fu0435u0440u0432u044bu0445 u043bu0438u0446",
+                        "description": null,
+                        "id_skill_area": 19
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 50,
+            "color": "#FFD700"
+        },
+        "20": {
+            "title": "u041bu0438u0447u043du043eu0435 u0440u0430u0437u0432u0438u0442u0438u0435",
+            "skills": [
+                {
+                    "skill": {
+                        "id": 142,
+                        "title": "45 u0442u0430u0442u0443u0438u0440u043eu0432u043eu043a u043bu0438u0447u043du043eu0441u0442u0438, u041cu0430u043au0441u0438u043c u0411u0430u0442u044bu0440u0435u0432",
+                        "description": null,
+                        "id_skill_area": 20
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 143,
+                        "title": "u041au0430u043a u043fu0440u0438u0432u0435u0441u0442u0438 u0434u0435u043bu0430 u0432 u043fu043eu0440u044fu0434u043eu043a. u0418u0441u043au0443u0441u0441u0442u0432u043e u043fu0440u043eu0434u0443u043au0442u0438u0432u043du043eu0441u0442u0438 u0431u0435u0437 u0441u0442u0440u0435u0441u0441u0430, u0414u044du0432u0438u0434 u0410u043bu043bu0435u043d",
+                        "description": null,
+                        "id_skill_area": 20
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                },
+                {
+                    "skill": {
+                        "id": 144,
+                        "title": "u0426u0435u043bu044c: u043fu0440u043eu0446u0435u0441u0441 u043du0435u043fu0440u0435u0440u044bu0432u043du043eu0433u043e u0441u043eu0432u0435u0440u0448u0435u043du0441u0442u0432u043eu0432u0430u043du0438u044f, u042du043bu0438u044fu0445u0443 u0413u043eu043bu0434u0440u0430u0442u0442, u0414u0436u0435u0444u0444 u041au043eu043au0441",
+                        "description": null,
+                        "id_skill_area": 20
+                    },
+                    "level": {
+                        "title": "u041du0435u0442 u0437u043du0430u043du0438u044f",
+                        "description": null,
+                        "priority": 3,
+                        "color": "#B22222",
+                        "percent": 50
+                    }
+                }
+            ],
+            "progress": 50,
+            "color": "#FFD700"
+        }
+    }
+}

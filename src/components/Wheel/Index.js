@@ -1,21 +1,46 @@
 import React from "react";
 import * as d3 from "d3";
 import data from './data'
+import userData from './reaaldata';
+
 
 class BarChartV1 extends React.Component {
 
 	constructor(props) {
 		super(props)
-
-		this.myData = data
-		this.data = this.myData;
+        this.realData = userData.areas
+        console.log(this.realData)
+        this.realArr = {}
+        this.realArr.children = []
+        
+        this.realData = Object.keys(this.realData).map((key) => {
+            return this.realArr.children.push(this.realData[key])
+        })
+        this.realArr.children.forEach(element => {
+            element.children = [];
+            Object.keys(element).map((key) => {
+                return element.children.push(element[key])
+            })
+        });
+        console.log(this.realArr, "realArr")
+        console.log(this.data);
+        console.log(typeof(data[0]))
 		this.partition = data => {
 			const root = d3.hierarchy(data)
-				.sum(d => d.value)
-				.sort((a, b) => b.value - a.value);
+				.sum(d => 200)
 			return d3.partition().size([2 * Math.PI, root.height + 1])(root);
-		}
-		this.color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.data.children.length + 1))
+        }
+
+        Object.size = function(obj) {
+            var size = 0, key;
+            for (key in obj) {
+                if (obj.hasOwnProperty(key)) size++;
+            }
+            return size;
+        };
+        console.log(Object.keys(this.realData).length)
+
+        this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, Object.keys(this.realData).length + 1))
 		this.format = d3.format(",d")
 		this.width = this.props.width;
 		this.radius = this.width / 6
@@ -28,28 +53,22 @@ class BarChartV1 extends React.Component {
 			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius - 1))
 	}
 
-	handleGetJson() {
-		console.log("inside handleGetJson");
-		fetch(`/data.json`)
-			.then((response) => response.json())
-			.then((messages) => { console.log("messages"); });
-	}
-
 	componentDidMount() {
-
-		
-		this.charts(this.partition, this.data, d3, this.width, this.color, this.arc, this.format, this.radius)
+        // this.charts(this.partition, this.data, d3, this.width, this.color, this.arc, this.format, this.radius)
+        this.charts(this.partition, this.realArr, d3, this.width, this.realColor, this.arc, this.format, this.radius)
+        
 	}
 
 	componentDidUpdate() {
-		this.charts(this.partition, this.data, d3, this.width, this.color, this.arc, this.format, this.radius)
+        // this.charts(this.partition, this.data, d3, this.width, this.color, this.arc, this.format, this.radius)
+        this.charts(this.partition, this.realArr, d3, this.width, this.realColor, this.arc, this.format, this.radius)
 	}
 
 	charts(partition, data, d3, width, color, arc, format, radius) {
 		const root = partition(data);
-		console.log("fake", root)
-		root.each(d => d.current = d);
-		console.log(root.descendants().slice(1))
+        console.log(root);
+        root.each(d => d.current = d);
+        console.log(root.descendants().slice(1))
 		console.log(this.viz)
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
