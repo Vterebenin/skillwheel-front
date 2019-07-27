@@ -1,15 +1,16 @@
 import React from "react";
 import * as d3 from "d3";
 import data from './data'
-import userData from './reaaldata';
+// import userData from './reaaldata';
+import { usserData } from '../mocks/realdata'
 
 
 class BarChartV1 extends React.Component {
 
 	constructor(props) {
 		super(props)
-        this.realData = userData.areas
-        console.log(this.realData)
+        this.realData = usserData.areas
+        console.log(this.uniData, "unidata")
         this.realArr = {}
         this.realArr.children = []
         
@@ -81,7 +82,7 @@ class BarChartV1 extends React.Component {
 			.selectAll("path")
 			.data(root.descendants().slice(1))
 			.join("path")
-			.attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
+			.attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.title); })
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
 			.attr("d", d => arc(d.current));
 
@@ -90,7 +91,7 @@ class BarChartV1 extends React.Component {
 			.on("click", clicked);
 
 		path.append("title")
-			.text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+			.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n${format(d.value)}`);
 
 		const label = g.append("g")
 			.attr("pointer-events", "none")
@@ -102,7 +103,7 @@ class BarChartV1 extends React.Component {
 			.attr("dy", "0.35em")
 			.attr("fill-opacity", d => +labelVisible(d.current))
 			.attr("transform", d => labelTransform(d.current))
-			.text(d => d.data.name);
+			.text(d => d.data.title);
 
 		const parent = g.append("circle")
 			.datum(root)
