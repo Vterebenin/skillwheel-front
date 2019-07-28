@@ -18,14 +18,15 @@ class BarChartV1 extends React.Component {
 			const pushObj = {}
 			pushObj.color = this.realData.areas[key].color
 			pushObj.title = this.realData.areas[key].title
-			pushObj.value = 2
+			// pushObj.value = 2
 			pushObj.children = this.realData.areas[key].skills
             return this.realArr.children.push(pushObj)
 		})
         this.realArr.children.forEach(element => {
 			
 			Object.keys(element.children).map((key) => {
-				element.children[key].value = 2000000
+				element.children[key].value = 2
+				element.children[key].id = element.children[key].skill.id
 				element.children[key].color = element.children[key].level.color
 				element.children[key].title = element.children[key].skill.title
 				// console.log(element.children[key])
@@ -86,8 +87,11 @@ class BarChartV1 extends React.Component {
 			.join("path")
 			// .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.title); })
 			.attr("fill", d => { return d.data.color })
+			.attr("id", d => d.data.id)
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
-			.attr("d", d => arc(d.current));
+			.attr("d", d => arc(d.current))
+			.on("click", pathClick);
+
 
 		path.filter(d => d.children)
 			.style("cursor", "pointer")
@@ -114,7 +118,9 @@ class BarChartV1 extends React.Component {
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
 			.on("click", clicked);
-
+		function pathClick() {
+			console.log(this.id);
+		}
 		function clicked(p) {
 			parent.datum(p.parent || root);
 
@@ -125,7 +131,8 @@ class BarChartV1 extends React.Component {
 				y1: Math.max(0, d.y1 - p.depth)
 			});
 
-			const t = g.transition().duration(750);
+
+			const t = g.transition().duration(1000);
 
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
