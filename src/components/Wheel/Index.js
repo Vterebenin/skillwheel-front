@@ -5,30 +5,48 @@ import data from './data'
 import { usserData } from '../mocks/realdata'
 
 
+
 class BarChartV1 extends React.Component {
 
 	constructor(props) {
 		super(props)
-        this.realData = usserData.areas
-        console.log(this.uniData, "unidata")
-        this.realArr = {}
-        this.realArr.children = []
+        this.realData = usserData
+        console.log(this.realData, "unidata")
+        this.realArr = usserData
+		this.realArr.children = []
+		
+		console.log(this.realArr, "first")
         
-        this.realData = Object.keys(this.realData).map((key) => {
-            return this.realArr.children.push(this.realData[key])
-        })
+        
+		Object.keys(this.realData.areas).map((key) => {
+			const pushObj = {}
+			pushObj.title = this.realData.areas[key].title
+			pushObj.children = this.realData.areas[key].skills
+            return this.realArr.children.push(pushObj)
+		})
+		// Object.keys(this.realArr).map((key) => {
+			// 	this.realArr.children[key].title = "132"
+			// 	console.log( this.realArr.children[key].title )
+		// })
         this.realArr.children.forEach(element => {
-            element.children = [];
-            Object.keys(element).map((key) => {
-                return element.children.push(element[key])
+			
+			Object.keys(element.children).map((key) => {
+				element.children.children = []
+				element.children[key].title = element.children[key].skill.title
+				console.log(element.children[key])
+				if (key === "children") {
+					element.children.children.push(element[key].skill)
+					return element
+				}
             })
         });
+		console.log(this.realArr," real1111")
         console.log(this.realArr, "realArr")
         console.log(this.data);
         console.log(typeof(data[0]))
 		this.partition = data => {
 			const root = d3.hierarchy(data)
-				.sum(d => 200)
+				.sum(d => 1)
 			return d3.partition().size([2 * Math.PI, root.height + 1])(root);
         }
 
@@ -41,7 +59,7 @@ class BarChartV1 extends React.Component {
         };
         console.log(Object.keys(this.realData).length)
 
-        this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, Object.keys(this.realData).length + 1))
+        this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
 		this.format = d3.format(",d")
 		this.width = this.props.width;
 		this.radius = this.width / 6
@@ -67,9 +85,12 @@ class BarChartV1 extends React.Component {
 
 	charts(partition, data, d3, width, color, arc, format, radius) {
 		const root = partition(data);
-        console.log(root);
-        root.each(d => d.current = d);
-        console.log(root.descendants().slice(1))
+        console.log(root, "real");
+		root.each(d => d.current = d);
+		// root.each(d => console.log(d.skills ? d.skills : 'undef' ))
+        root.descendants().slice(1).map(d => {
+			console.log(d.data ? d.data : "net", "test")
+		})
 		console.log(this.viz)
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])

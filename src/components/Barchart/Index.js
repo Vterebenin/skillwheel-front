@@ -47,10 +47,8 @@ class BarChartV1 extends React.Component {
 
 	charts(partition, data, d3, width, color, arc, format, radius) {
 		const root = partition(data);
-		console.log("fake", root)
+		console.log(root);
 		root.each(d => d.current = d);
-		console.log(root.descendants().slice(1))
-		console.log(this.viz)
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
 			.style("font", "10px sans-serif");
