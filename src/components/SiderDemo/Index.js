@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import SkillWheel from '../SkillWheel/Index';
-import Barchart from '../Barchart/Index'
+import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
 import Wheel from '../Wheel/Index'
+import UserContent from '../UserContent/Index';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -75,12 +74,15 @@ class SiderDemo extends React.Component {
                             <Breadcrumb.Item>User</Breadcrumb.Item>
                             <Breadcrumb.Item>Bill</Breadcrumb.Item>
                         </Breadcrumb>
-                        <h1>custom implementation</h1>
-                        <SkillWheel />
-                        <h1>what it shoud be</h1>
-                        <Barchart width="600" />
                         <h1>my implementation</h1>
-                        <Wheel width="800" />
+                        <Row gutter={8}>
+                            <Col span={8}>
+                                <UserContent />
+                            </Col>
+                            <Col span={16}>
+                                <Wheel />
+                            </Col>
+                        </Row>
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
                 </Layout>

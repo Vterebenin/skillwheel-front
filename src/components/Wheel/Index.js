@@ -1,18 +1,17 @@
 import React from "react";
 import * as d3 from "d3";
-import data from './data'
-// import userData from './reaaldata';
-import { usserData } from '../mocks/realdata'
+import { userData } from '../mocks/realdata'
 
+import { withFauxDOM } from 'react-faux-dom'
 
 
 class BarChartV1 extends React.Component {
 
 	constructor(props) {
 		super(props)
-        this.realData = usserData
+        this.realData = userData
         console.log(this.realData, "unidata")
-        this.realArr = usserData
+        this.realArr = userData
 		this.realArr.children = []
 		Object.keys(this.realData.areas).map((key) => {
 			const pushObj = {}
@@ -49,7 +48,7 @@ class BarChartV1 extends React.Component {
 
         this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
 		this.format = d3.format(",d")
-		this.width = this.props.width;
+		this.width = this.props.width || 700;
 		this.radius = this.width / 6
 		this.arc = d3.arc()
 			.startAngle(d => d.x0)
@@ -65,8 +64,10 @@ class BarChartV1 extends React.Component {
         
 	}
 
-	componentDidUpdate() {
-        this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
+	componentDidUpdate(prevProps, prevState) {
+		if (this.props.data !== prevProps.data) {
+			this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
+		}
 	}
 
 	charts(partition, data, d3, width, arc, radius) {
@@ -183,4 +184,4 @@ class BarChartV1 extends React.Component {
 	}
 }
 
-export default BarChartV1;
+export default withFauxDOM(BarChartV1);
