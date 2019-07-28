@@ -60,15 +60,15 @@ class BarChartV1 extends React.Component {
 	}
 
 	componentDidMount() {
-        this.charts(this.partition, this.realArr, d3, this.width, this.realColor, this.arc, this.format, this.radius)
+        this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
         
 	}
 
 	componentDidUpdate() {
-        this.charts(this.partition, this.realArr, d3, this.width, this.realColor, this.arc, this.format, this.radius)
+        this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
 	}
 
-	charts(partition, data, d3, width, color, arc, format, radius) {
+	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
         console.log(root, "real");
 		root.each(d => d.current = d);
