@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Row, Col, Button } from 'antd';
 import Wheel from '../Wheel/Index'
 import UserContent from '../UserContent/Index';
 import { userData } from '../mocks/realdata'
@@ -9,9 +9,14 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 class SiderDemo extends React.Component {
-    state = {
-        collapsed: false,
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapsed: false,
+            content: true
+        };
+        this.onButtonClick = this.onButtonClick.bind(this)
+    }
 
     onTitleClick = (key, domEvent) => {
         return false;
@@ -22,30 +27,39 @@ class SiderDemo extends React.Component {
         this.setState({ collapsed });
     };
 
+    onButtonClick = () => {
+        this.setState({
+            content: !this.state.content
+        })
+        console.log(this.state.content)
+    }
 
+    searchObj(obj, id) {
+            
+            
+        for (var key in obj) {
+            var value = obj[key];
+            if (typeof value === 'object') {
+                this.searchObj(value, id);
+            }
+            if (key === "id") {
+                if (value === id) {
+                    console.log(obj)
+                    console.log('property=' + key + ' value=' + value);
+                }
+            }
+        }
+    }
 
     render() {
       
 
-        function searchObj(obj, id) {
-            for (var key in obj) {
-                var value = obj[key];
-                if (typeof value === 'object') {
-                    searchObj(value, id);
-                }
-                if (key === "id") {
-                    if (value === id) {
-                        console.log(obj)
-                        console.log('property=' + key + ' value=' + value);
-                    }
-                }
-            }
-        }
+        
         const skillClick = (content) => {
+            
             console.log(userData);
             console.log(content.data.id)
-            this.prevObj = userData
-            searchObj(userData, content.data.id)
+            this.searchObj(userData, content.data.id)
         }
         return (
             <Layout style={{ minHeight: '100vh' }}>
@@ -96,12 +110,18 @@ class SiderDemo extends React.Component {
                     <Content style={{ margin: '0 16px' }}>
                         <Breadcrumb style={{ margin: '16px 0' }}>
                             <Breadcrumb.Item>User</Breadcrumb.Item>
-                            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                            <Breadcrumb.Item>{userData.name}</Breadcrumb.Item>
                         </Breadcrumb>
-                        <h1>my implementation</h1>
+                        <h1>Ваш профиль:</h1>
+                        <Button onClick={this.onButtonClick}>toggle Content</Button>
                         <Row gutter={8}>
                             <Col span={8}>
-                                <UserContent />
+                                {this.state.content ? (
+                                    <UserContent />
+                                ) : (
+                                    "123"
+                                )}
+
                             </Col>
                             <Col span={16}>
                                 <Wheel clickHandler={skillClick} />
