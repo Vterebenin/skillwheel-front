@@ -3,6 +3,7 @@ import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Row, Col, Button } from 'antd';
 import Wheel from '../Wheel/Index'
 import UserContent from '../UserContent/Index';
+import SkillContent from '../SkillContent/Index'
 import { userData } from '../mocks/realdata'
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -119,7 +120,7 @@ class SiderDemo extends React.Component {
                                 {this.state.content ? (
                                     <UserContent />
                                 ) : (
-                                    "123"
+                                    <SkillContent />
                                 )}
 
                             </Col>
