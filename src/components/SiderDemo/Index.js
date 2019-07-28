@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
 import Wheel from '../Wheel/Index'
 import UserContent from '../UserContent/Index';
-
+import { userData } from '../mocks/realdata'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -22,7 +22,31 @@ class SiderDemo extends React.Component {
         this.setState({ collapsed });
     };
 
+
+
     render() {
+      
+
+        function searchObj(obj, id) {
+            for (var key in obj) {
+                var value = obj[key];
+                if (typeof value === 'object') {
+                    searchObj(value, id);
+                }
+                if (key === "id") {
+                    if (value === id) {
+                        console.log(obj)
+                        console.log('property=' + key + ' value=' + value);
+                    }
+                }
+            }
+        }
+        const skillClick = (content) => {
+            console.log(userData);
+            console.log(content.data.id)
+            this.prevObj = userData
+            searchObj(userData, content.data.id)
+        }
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
@@ -80,7 +104,7 @@ class SiderDemo extends React.Component {
                                 <UserContent />
                             </Col>
                             <Col span={16}>
-                                <Wheel />
+                                <Wheel clickHandler={skillClick} />
                             </Col>
                         </Row>
                     </Content>

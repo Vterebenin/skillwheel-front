@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import { userData } from '../mocks/realdata'
-
+// эта библиотека, возможно, увеличит производительность ¯\_(ツ)_/¯
 import { withFauxDOM } from 'react-faux-dom'
 
 
@@ -9,18 +9,18 @@ class BarChartV1 extends React.Component {
 
 	constructor(props) {
 		super(props)
-        this.realData = userData
-        console.log(this.realData, "unidata")
-        this.realArr = userData
+		this.handleClick = this.props.clickHandler
+		// копирование объектов в JSe это какой-то пиздец
+        this.realData = JSON.parse(JSON.stringify(userData))
+        this.realArr = this.realData
 		this.realArr.children = []
-		Object.keys(this.realData.areas).map((key) => {
+		for (let [key] of Object.entries(this.realData.areas)) {
 			const pushObj = {}
 			pushObj.color = this.realData.areas[key].color
 			pushObj.title = this.realData.areas[key].title
-			// pushObj.value = 2
 			pushObj.children = this.realData.areas[key].skills
-            return this.realArr.children.push(pushObj)
-		})
+            this.realArr.children.push(pushObj)
+		}
         this.realArr.children.forEach(element => {
 			
 			Object.keys(element.children).map((key) => {
@@ -28,11 +28,7 @@ class BarChartV1 extends React.Component {
 				element.children[key].id = element.children[key].skill.id
 				element.children[key].color = element.children[key].level.color
 				element.children[key].title = element.children[key].skill.title
-				// console.log(element.children[key])
-				// if (key === "children") {
-					// element.children.children.push(element[key].skill)
-					return element
-				// }
+				return element
             })
 		});
 		
@@ -44,7 +40,6 @@ class BarChartV1 extends React.Component {
         }
 
        
-        console.log(Object.keys(this.realData).length)
 
         this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
 		this.format = d3.format(",d")
@@ -53,11 +48,19 @@ class BarChartV1 extends React.Component {
 		this.arc = d3.arc()
 			.startAngle(d => d.x0)
 			.endAngle(d => d.x1)
-			.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
+			// размер паддинга между чанками
+			.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
 			.padRadius(this.radius * 1.5)
+			// внутренний радиус
 			.innerRadius(d => d.y0 * this.radius)
+			// внешний
 			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius - 1))
+
+
+		
 	}
+
+	
 
 	componentDidMount() {
         this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
@@ -70,11 +73,10 @@ class BarChartV1 extends React.Component {
 		}
 	}
 
+
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
-        console.log(root, "real");
 		root.each(d => d.current = d);
-		root.descendants().slice(1).map(d => console.log(d.data));
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
 			.style("font", "10px sans-serif");
@@ -86,12 +88,12 @@ class BarChartV1 extends React.Component {
 			.selectAll("path")
 			.data(root.descendants().slice(1))
 			.join("path")
-			// .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.title); })
 			.attr("fill", d => { return d.data.color })
 			.attr("id", d => d.data.id)
+			// цвет интенсивности закраски чанков 
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
 			.attr("d", d => arc(d.current))
-			.on("click", pathClick);
+			.on("click", this.handleClick);
 
 
 		path.filter(d => d.children)
@@ -119,9 +121,7 @@ class BarChartV1 extends React.Component {
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
 			.on("click", clicked);
-		function pathClick() {
-			console.log(this.id);
-		}
+		
 		function clicked(p) {
 			parent.datum(p.parent || root);
 
@@ -133,7 +133,7 @@ class BarChartV1 extends React.Component {
 			});
 
 
-			const t = g.transition().duration(1000);
+			const t = g.transition().duration(500);
 
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
