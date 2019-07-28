@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "55f0800fc6e7ba1d85baa356309e0a14",
+    "revision": "a4226c565550fd26a2c027de91bdfcd4",
     "url": "/skillwheel-front/index.html"
   },
   {
-    "revision": "4bf797e54aa5abe32093",
+    "revision": "d95db0672efdfadeae3c",
     "url": "/skillwheel-front/static/css/2.676dc204.chunk.css"
   },
   {
-    "revision": "aa61d41899b20d45b714",
+    "revision": "58f1456c18cedb84de47",
     "url": "/skillwheel-front/static/css/main.194c2776.chunk.css"
   },
   {
-    "revision": "4bf797e54aa5abe32093",
-    "url": "/skillwheel-front/static/js/2.13957433.chunk.js"
+    "revision": "d95db0672efdfadeae3c",
+    "url": "/skillwheel-front/static/js/2.c22ad208.chunk.js"
   },
   {
-    "revision": "aa61d41899b20d45b714",
-    "url": "/skillwheel-front/static/js/main.9f166e47.chunk.js"
+    "revision": "58f1456c18cedb84de47",
+    "url": "/skillwheel-front/static/js/main.fc4643bd.chunk.js"
   },
   {
     "revision": "856b0306378b1b648423",
