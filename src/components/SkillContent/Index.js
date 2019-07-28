@@ -7,10 +7,19 @@ const { Meta } = Card;
 export default class Index extends Component {
     render() {
         const currentSkill = userData.areas[1].skills[1]
-
-        // console.log(userData.areas[1].skills[1], "from skillContent")
+        
+        const Desc = () => {
+            
+            return ( 
+                <React.Fragment>
+                    <h2>{currentSkill.skill.title}</h2>
+                    <h3>Оценка: {currentSkill.level.title}</h3>
+                    <h4>Какое-нибудь описание для этого скила? description сейчас "null"</h4>
+                </React.Fragment>
+            )
+        }
         return (
-            <div>
+            <React.Fragment>
                 <Card
                     hoverable
                     style={{ textAlign: "center" }}
@@ -29,11 +38,9 @@ export default class Index extends Component {
 
                     )}
                 >
-                    <Meta title={currentSkill.level.title} description={<h4>Какое-нибудь описание для этого скила? description сейчас "null"</h4>} />
+                    <Meta description={<Desc />} />
                 </Card>
-
-
-            </div>
+            </React.Fragment>
         )
     }
 }
