@@ -48,6 +48,7 @@ class BarChartV1 extends React.Component {
 	charts(partition, data, d3, width, color, arc, format, radius) {
 		const root = partition(data);
 		console.log(root);
+		root.descendants().slice(1).map(d => console.log(d.data, "fakeones"));
 		root.each(d => d.current = d);
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])

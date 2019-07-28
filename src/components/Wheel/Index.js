@@ -14,49 +14,36 @@ class BarChartV1 extends React.Component {
         console.log(this.realData, "unidata")
         this.realArr = usserData
 		this.realArr.children = []
-		
-		console.log(this.realArr, "first")
-        
-        
 		Object.keys(this.realData.areas).map((key) => {
 			const pushObj = {}
+			pushObj.color = this.realData.areas[key].color
 			pushObj.title = this.realData.areas[key].title
+			pushObj.value = 2
 			pushObj.children = this.realData.areas[key].skills
             return this.realArr.children.push(pushObj)
 		})
-		// Object.keys(this.realArr).map((key) => {
-			// 	this.realArr.children[key].title = "132"
-			// 	console.log( this.realArr.children[key].title )
-		// })
         this.realArr.children.forEach(element => {
 			
 			Object.keys(element.children).map((key) => {
-				element.children.children = []
+				element.children[key].value = 2000000
+				element.children[key].color = element.children[key].level.color
 				element.children[key].title = element.children[key].skill.title
-				console.log(element.children[key])
-				if (key === "children") {
-					element.children.children.push(element[key].skill)
+				// console.log(element.children[key])
+				// if (key === "children") {
+					// element.children.children.push(element[key].skill)
 					return element
-				}
+				// }
             })
-        });
-		console.log(this.realArr," real1111")
-        console.log(this.realArr, "realArr")
-        console.log(this.data);
-        console.log(typeof(data[0]))
+		});
+		
 		this.partition = data => {
 			const root = d3.hierarchy(data)
-				.sum(d => 1)
-			return d3.partition().size([2 * Math.PI, root.height + 1])(root);
+				.sum(d => d.value)
+				.sort((a, b) => b.value - a.value);
+			return d3.partition().size([2 * Math.PI, root.height + 2])(root);
         }
 
-        Object.size = function(obj) {
-            var size = 0, key;
-            for (key in obj) {
-                if (obj.hasOwnProperty(key)) size++;
-            }
-            return size;
-        };
+       
         console.log(Object.keys(this.realData).length)
 
         this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
@@ -73,13 +60,11 @@ class BarChartV1 extends React.Component {
 	}
 
 	componentDidMount() {
-        // this.charts(this.partition, this.data, d3, this.width, this.color, this.arc, this.format, this.radius)
         this.charts(this.partition, this.realArr, d3, this.width, this.realColor, this.arc, this.format, this.radius)
         
 	}
 
 	componentDidUpdate() {
-        // this.charts(this.partition, this.data, d3, this.width, this.color, this.arc, this.format, this.radius)
         this.charts(this.partition, this.realArr, d3, this.width, this.realColor, this.arc, this.format, this.radius)
 	}
 
@@ -87,11 +72,7 @@ class BarChartV1 extends React.Component {
 		const root = partition(data);
         console.log(root, "real");
 		root.each(d => d.current = d);
-		// root.each(d => console.log(d.skills ? d.skills : 'undef' ))
-        root.descendants().slice(1).map(d => {
-			console.log(d.data ? d.data : "net", "test")
-		})
-		console.log(this.viz)
+		root.descendants().slice(1).map(d => console.log(d.data));
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
 			.style("font", "10px sans-serif");
