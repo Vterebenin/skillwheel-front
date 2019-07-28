@@ -29,7 +29,7 @@ export default class Index extends Component {
 
                     )}
                 >
-                    <Meta title={currentSkill.level.percent} description={<h4>Какое-нибудь описание для этого скила? description сейчас "null"</h4>} />
+                    <Meta title={currentSkill.level.title} description={<h4>Какое-нибудь описание для этого скила? description сейчас "null"</h4>} />
                 </Card>
 
 
