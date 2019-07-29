@@ -23,10 +23,10 @@ export default class UserContent extends Component {
                 img = imgPiggy        
                 break;
             case "мастер":
-                img = imgPiggy        
+                img = imgNotPiggy        
                 break;
             default:
-                img = imgNotPiggy        
+                img = imgPiggy        
                 break;
         }
 
