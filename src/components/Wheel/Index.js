@@ -11,40 +11,40 @@ class BarChartV1 extends React.Component {
 		super(props)
 		this.handleClick = this.props.clickHandler
 		// копирование объектов в JSe это какой-то пиздец
-        this.realData = JSON.parse(JSON.stringify(userData))
-        this.realArr = this.realData
+		this.realData = JSON.parse(JSON.stringify(userData))
+		this.realArr = this.realData
 		this.realArr.children = []
 		for (let [key] of Object.entries(this.realData.areas)) {
 			const pushObj = {}
 			pushObj.color = this.realData.areas[key].color
 			pushObj.title = this.realData.areas[key].title
 			pushObj.children = this.realData.areas[key].skills
-            this.realArr.children.push(pushObj)
+			this.realArr.children.push(pushObj)
 		}
-        this.realArr.children.forEach(element => {
-			
+		this.realArr.children.forEach(element => {
+
 			Object.keys(element.children).map((key) => {
 				element.children[key].value = 2
 				element.children[key].id = element.children[key].skill.id
 				element.children[key].color = element.children[key].level.color
 				element.children[key].title = element.children[key].skill.title
 				return element
-            })
+			})
 		});
-		
+
 		this.partition = data => {
 			const root = d3.hierarchy(data)
 				.sum(d => d.value)
 				.sort((a, b) => b.value - a.value);
-				// во втором параметре сайза можно задать количество кругов
-				// 1 -- изначальное количество со всеми кругами.
-				// если поставить 2, будет (общее количество - 1)кругов
+			// во втором параметре сайза можно задать количество кругов
+			// 1 -- изначальное количество со всеми кругами.
+			// если поставить 2, будет (общее количество - 1)кругов
 			return d3.partition().size([2 * Math.PI, root.height + 2])(root);
-        }
+		}
 
-       
 
-        this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
+
+		this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
 		this.format = d3.format(",d")
 		this.width = this.props.width || 700;
 		this.radius = this.width / 6
@@ -60,19 +60,19 @@ class BarChartV1 extends React.Component {
 			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius - 1))
 
 
-		
+
 	}
 
-	
+
 
 	componentDidMount() {
-        this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
-        
+		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
+
 	}
 
 	componentDidUpdate(prevProps, prevState) {
 		if (this.props.data !== prevProps.data) {
-			this.charts(this.partition, this.realArr, d3, this.width,  this.arc,  this.radius)
+			this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 		}
 	}
 
@@ -94,7 +94,7 @@ class BarChartV1 extends React.Component {
 			.attr("fill", d => { return d.data.color })
 			.attr("id", d => d.data.id)
 			// цвет интенсивности закраски чанков 
-			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 1 : 0.5) : 0)
+			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
 			.attr("d", d => arc(d.current))
 			.on("click", this.handleClick);
 
@@ -106,27 +106,43 @@ class BarChartV1 extends React.Component {
 		path.append("title")
 			.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n`);
 
-		const label = g.append("g")
+
+		let label = g.append("g")
 			.attr("pointer-events", "none")
 			.attr("text-anchor", "middle")
 			.style("user-select", "none")
-			.selectAll("text")
+			.selectAll("foreignObject")
 			.data(root.descendants().slice(1))
-			.join("text")
-			.attr("width", 200)
-			.attr("height", 300)
+			.join("foreignObject")
+			.attr("class", "sk-wheel-foreign")
+			.attr("width", 150)
+			.attr("height", 100)
 			.attr("dy", "0.35em")
-			.attr("lengthAdjust", "20px")
-			.attr("fill-opacity", d => +labelVisible(d.current))
+			.attr("opacity", d => +labelVisible(d.current))
 			.attr("transform", d => labelTransform(d.current))
-			// в лейбл задаем текст
-			.text(d => d.data.title);
-			// .append("foreignObject")
-			// .append("xhtml:body")
+			.append("xhtml:div")
+			// .attr("transform", d => labelTransform(d.current))
+			// .attr("width", 150)
+			.attr("class", "sk-wheel-text")
 			
-			// .style("font", "14px 'Helvetica Neue'")
-			// .html("<p> 333233333333333333333333 33333333333333333 </p>");
+			.html(d => d.data.title)
+		label._groups[0] = label._groups[0].map(e => {
+			return e.parentNode
+		})
+		
 
+		// const label2 = g.append("g")
+		// 	.attr("pointer-events", "none")
+		// 	.attr("text-anchor", "middle")
+		// 	.style("user-select", "none")
+		// 	.selectAll("text")
+		// 	.data(root.descendants().slice(1))
+		// 	.join("text")
+		// 	.attr("dy", "0.35em")
+		// 	.attr("fill-opacity", d => +labelVisible(d.current))
+		// 	.attr("transform", d => labelTransform(d.current))
+		// 	// в лейбл задаем текст
+		// 	.text(d => d.data.title)
 
 
 		const parent = g.append("circle")
@@ -135,21 +151,21 @@ class BarChartV1 extends React.Component {
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
 			.on("click", clicked);
-		
+
 		function clicked(p) {
 			parent.datum(p.parent || root);
 
-			root.each(d => d.target = {
-				x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
-				x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
-				y0: Math.max(0, d.y0 - p.depth),
-				y1: Math.max(0, d.y1 - p.depth)
+			root.each(d => {
+				d.target = {
+					x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+					x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+					y0: Math.max(0, d.y0 - p.depth),
+					y1: Math.max(0, d.y1 - p.depth)
+				}
 			});
 
 			// время анимации в милисекундах
 			const t = g.transition().duration(750);
-			// печально но сейчас скорость отрисовки кругов зависит от 
-
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
 			// the next transition from the desired position.
@@ -164,10 +180,12 @@ class BarChartV1 extends React.Component {
 				.attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
 				.attrTween("d", d => () => arc(d.current));
 
+			
+			console.log(label);
 			label.filter(function (d) {
-				return +this.getAttribute("fill-opacity") || labelVisible(d.target);
+				return +this.getAttribute("opacity") || labelVisible(d.target);
 			}).transition(t)
-				.attr("fill-opacity", d => +labelVisible(d.target))
+				.attr("opacity", d => +labelVisible(d.target))
 				.attrTween("transform", d => () => labelTransform(d.current));
 		}
 
@@ -181,8 +199,8 @@ class BarChartV1 extends React.Component {
 
 		function labelTransform(d) {
 			const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-			const y = (d.y0 + d.y1) / 2 * radius;
-			return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+			const y = (d.y0 + d.y1) / 2 * radius - 10;
+			return `rotate(${x - 90}) translate(${y}, 10) rotate(${x < 180 ? 0 : 180})`;
 		}
 
 		return svg.node();

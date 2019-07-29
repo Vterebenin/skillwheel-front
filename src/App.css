@@ -4,6 +4,25 @@
 /* * {
   transition: all 0.5s;
 } */
+
+.sk-wheel-foreign {
+  overflow: visible;
+}
+.sk-wheel-text {
+  transform: translateX(-50%);
+  /* transform-origin: top left; */
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sk-wheel-foreign:nth-child(-n+6) .sk-wheel-text {
+  position: absolute;
+  left: auto;
+  right: 10px;
+  top: -20px;
+}
+
 #components-layout-demo-side .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
