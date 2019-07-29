@@ -36,6 +36,9 @@ class BarChartV1 extends React.Component {
 			const root = d3.hierarchy(data)
 				.sum(d => d.value)
 				.sort((a, b) => b.value - a.value);
+				// во втором параметре сайза можно задать количество кругов
+				// 1 -- изначальное количество со всеми кругами.
+				// если поставить 2, будет (общее количество - 1)кругов
 			return d3.partition().size([2 * Math.PI, root.height + 2])(root);
         }
 
@@ -91,7 +94,7 @@ class BarChartV1 extends React.Component {
 			.attr("fill", d => { return d.data.color })
 			.attr("id", d => d.data.id)
 			// цвет интенсивности закраски чанков 
-			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
+			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 1 : 0.5) : 0)
 			.attr("d", d => arc(d.current))
 			.on("click", this.handleClick);
 
@@ -110,10 +113,21 @@ class BarChartV1 extends React.Component {
 			.selectAll("text")
 			.data(root.descendants().slice(1))
 			.join("text")
+			.attr("width", 200)
+			.attr("height", 300)
 			.attr("dy", "0.35em")
+			.attr("lengthAdjust", "20px")
 			.attr("fill-opacity", d => +labelVisible(d.current))
 			.attr("transform", d => labelTransform(d.current))
+			// в лейбл задаем текст
 			.text(d => d.data.title);
+			// .append("foreignObject")
+			// .append("xhtml:body")
+			
+			// .style("font", "14px 'Helvetica Neue'")
+			// .html("<p> 333233333333333333333333 33333333333333333 </p>");
+
+
 
 		const parent = g.append("circle")
 			.datum(root)
@@ -132,8 +146,9 @@ class BarChartV1 extends React.Component {
 				y1: Math.max(0, d.y1 - p.depth)
 			});
 
-
-			const t = g.transition().duration(500);
+			// время анимации в милисекундах
+			const t = g.transition().duration(750);
+			// печально но сейчас скорость отрисовки кругов зависит от 
 
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
