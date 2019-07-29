@@ -114,9 +114,9 @@ class SiderDemo extends React.Component {
                             <Breadcrumb.Item>{userData.name}</Breadcrumb.Item>
                         </Breadcrumb>
                         <h1>Ваш профиль:</h1>
-                        <Button onClick={this.onButtonClick}>toggle Content</Button>
-                        <Row gutter={8}>
+                        <Row gutter={100} style={{ margin: '0 auto', maxWidth: "1200px" }}>
                             <Col span={8}>
+                                <Button onClick={this.onButtonClick}>toggle Content</Button>
                                 {this.state.content ? (
                                     <UserContent />
                                 ) : (
