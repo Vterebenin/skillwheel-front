@@ -14,9 +14,11 @@ class SiderDemo extends React.Component {
         super(props);
         this.state = {
             collapsed: false,
-            content: true
+            content: true,
+            prevObj: null
         };
         this.onButtonClick = this.onButtonClick.bind(this)
+        this.skillClick = this.skillClick.bind(this)
     }
 
     onTitleClick = (key, domEvent) => {
@@ -37,31 +39,33 @@ class SiderDemo extends React.Component {
 
     searchObj(obj, id) {
             
-            
         for (var key in obj) {
             var value = obj[key];
             if (typeof value === 'object') {
+                this.setState({
+                    prevObj: obj
+                })
                 this.searchObj(value, id);
             }
             if (key === "id") {
                 if (value === id) {
                     console.log(obj)
+                    console.log(this.state.prevObj, "prev")
                     console.log('property=' + key + ' value=' + value);
+                    return this.prevObj
                 }
             }
         }
+    }
+
+    skillClick(content) {
+        this.searchObj(userData, content.data.id)
     }
 
     render() {
       
 
         
-        const skillClick = (content) => {
-            
-            console.log(userData);
-            console.log(content.data.id)
-            this.searchObj(userData, content.data.id)
-        }
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
@@ -120,12 +124,12 @@ class SiderDemo extends React.Component {
                                 {this.state.content ? (
                                     <UserContent />
                                 ) : (
-                                    <SkillContent />
+                                    <SkillContent contentObj={this.prevObj} />
                                 )}
 
                             </Col>
                             <Col span={16}>
-                                <Wheel clickHandler={skillClick} />
+                                <Wheel clickHandler={this.skillClick} />
                             </Col>
                         </Row>
                     </Content>
