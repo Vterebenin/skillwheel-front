@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/skillwheel-front/precache-manifest.930d9647b6e565c338b0ceeb851725b6.js"
+  "/skillwheel-front/precache-manifest.3b8e1899259a786d1853c2e399d4bab7.js"
 );
 
 self.addEventListener('message', (event) => {
