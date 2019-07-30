@@ -17,6 +17,8 @@ class SiderDemo extends React.Component {
             content: true,
             prevObj: null
         };
+        this.prevObj = null;
+        this.tarObj = null;
         this.onButtonClick = this.onButtonClick.bind(this)
         this.skillClick = this.skillClick.bind(this)
     }
@@ -31,26 +33,34 @@ class SiderDemo extends React.Component {
     };
 
     onButtonClick = () => {
-        this.setState({
-            content: !this.state.content
-        })
+        if (this.state.prevObj !== null) {
+            this.setState({
+                content: !this.state.content
+            })
+        } else {
+            alert("take a look at the skill")
+        }
         console.log(this.state.content)
     }
 
     searchObj(obj, id) {
-            
+        
         for (var key in obj) {
             var value = obj[key];
+            
             if (typeof value === 'object') {
-                this.setState({
-                    prevObj: obj
-                })
+                if ((obj !== null) && (obj.hasOwnProperty('skill'))) {
+                    this.prevObj = obj
+                    
+                }
                 this.searchObj(value, id);
             }
             if (key === "id") {
                 if (value === id) {
-                    console.log(obj)
-                    console.log(this.state.prevObj, "prev")
+                    this.setState({
+                        prevObj: this.prevObj
+                    })
+                    this.tarObj = this.prevObj 
                     console.log('property=' + key + ' value=' + value);
                     return this.prevObj
                 }
@@ -60,6 +70,12 @@ class SiderDemo extends React.Component {
 
     skillClick(content) {
         this.searchObj(userData, content.data.id)
+        if (this.state.prevObj !== null) {
+            this.setState({
+                content: false
+            })
+        } 
+        console.log("this.tarObj", this.tarObj);
     }
 
     render() {
@@ -120,11 +136,18 @@ class SiderDemo extends React.Component {
                         <h1>Ваш профиль:</h1>
                         <Row gutter={100} style={{ margin: '0 auto', maxWidth: "1200px" }}>
                             <Col span={8}>
-                                <Button onClick={this.onButtonClick}>toggle Content</Button>
+                                {this.state.prevObj ? (
+                                    <Button onClick={this.onButtonClick}>
+                                       {this.state.content ? 'Посмотреть текущий скилл' : 'Назад в профиль'} 
+                                    </Button>
+                                ):(
+                                    ''
+                                )}
+                                
                                 {this.state.content ? (
                                     <UserContent />
                                 ) : (
-                                    <SkillContent contentObj={this.prevObj} />
+                                    <SkillContent contentObj={this.state.prevObj} />
                                 )}
 
                             </Col>

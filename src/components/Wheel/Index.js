@@ -82,7 +82,7 @@ class BarChartV1 extends React.Component {
 		root.each(d => d.current = d);
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
-			.style("font", "10px sans-serif");
+			.style("font", "12px sans-serif");
 
 		const g = svg.append("g")
 			.attr("transform", `translate(${width / 2},${width / 2})`);
@@ -121,29 +121,15 @@ class BarChartV1 extends React.Component {
 			.attr("opacity", d => +labelVisible(d.current))
 			.attr("transform", d => labelTransform(d.current))
 			.append("xhtml:div")
-			// .attr("transform", d => labelTransform(d.current))
-			// .attr("width", 150)
 			.attr("class", "sk-wheel-text")
 			
 			.html(d => d.data.title)
+
+		// переопределение таргета лейбла
 		label._groups[0] = label._groups[0].map(e => {
 			return e.parentNode
 		})
 		
-
-		// const label2 = g.append("g")
-		// 	.attr("pointer-events", "none")
-		// 	.attr("text-anchor", "middle")
-		// 	.style("user-select", "none")
-		// 	.selectAll("text")
-		// 	.data(root.descendants().slice(1))
-		// 	.join("text")
-		// 	.attr("dy", "0.35em")
-		// 	.attr("fill-opacity", d => +labelVisible(d.current))
-		// 	.attr("transform", d => labelTransform(d.current))
-		// 	// в лейбл задаем текст
-		// 	.text(d => d.data.title)
-
 
 		const parent = g.append("circle")
 			.datum(root)

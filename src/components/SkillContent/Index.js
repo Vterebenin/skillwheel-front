@@ -4,21 +4,12 @@ import { Tooltip, Progress, Card } from 'antd';
 const { Meta } = Card;
 
 export default class Index extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            contentObj: this.props.contentObj
-        }
-    }
-    
     render() {
-        const { contentObj } = this.state;
-        console.log(contentObj)
+        const { contentObj } = this.props;
+        console.log(contentObj, "obj")
         const Desc = () => {
             return ( 
                 <React.Fragment>
-                    <h2>{contentObj.skill.title}</h2>
-                    
                     <h2>{contentObj.skill.title}</h2>
                     
                     <h3>Оценка: {contentObj.level.title}</h3>
@@ -37,12 +28,11 @@ export default class Index extends Component {
                             <Tooltip title={contentObj.level.title}>
                                 <Progress
                                     strokeColor={{
-                                        '0%': '#B22222',
-                                        '100%': '#32CD32',
+                                        '0%': '#11998e',
+                                        '100%': '#38ef7d',
                                     }}
                                     percent={contentObj.level.percent}
                                     type="circle"
-
                                 />
                             </Tooltip>
 
