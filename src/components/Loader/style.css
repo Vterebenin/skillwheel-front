@@ -1,0 +1,47 @@
+.loader {
+	position: relative;
+}
+
+.outer, .middle, .inner {
+	border: 4px solid transparent;
+	border-top-color: #b83129;
+	border-right-color: #b83129;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.outer {
+	width: 40px;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -20px;
+	animation: spin 2s linear infinite;
+}
+
+.middle {
+	width: 30px;
+	height: 30px;
+	border-top-color: #f1ad2e;
+	border-right-color: #f1ad2e;
+	margin-left: -15px;
+	margin-top: -15px;
+	animation: spin 1.75s linear reverse infinite;
+}
+
+.inner {
+	width: 20px;
+	height: 20px;
+	border-top-color: #383330;
+	border-right-color: #383330;
+	margin-left: -10px;
+	margin-top: -10px;
+	animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

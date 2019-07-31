@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Layout, Menu, Breadcrumb, Icon, Row, Col, Button } from 'antd';
 import Wheel from '../Wheel/Index'
+import Loader from '../Loader/Index';
 import UserContent from '../UserContent/Index';
 import SkillContent from '../SkillContent/Index'
 import { userData } from '../mocks/realdata'
@@ -13,6 +14,7 @@ class SiderDemo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            loading: true,
             collapsed: false,
             content: true,
             prevObj: null
@@ -22,6 +24,13 @@ class SiderDemo extends React.Component {
         this.onButtonClick = this.onButtonClick.bind(this)
         this.skillClick = this.skillClick.bind(this)
     }
+
+    componentDidMount() {
+        this.setState({
+            loading: false,
+        })
+    }
+    
 
     onTitleClick = (key, domEvent) => {
         return false;
@@ -84,6 +93,8 @@ class SiderDemo extends React.Component {
         
         return (
             <Layout style={{ minHeight: '100vh' }}>
+                {this.state.loading && <Loader />}
+
                 <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
                     <div className="logo" />
                     <Menu onTitleClick={this.onTitleClick} theme="dark" defaultSelectedKeys={['1']} mode="inline">
@@ -134,6 +145,7 @@ class SiderDemo extends React.Component {
                             <Breadcrumb.Item>{userData.name}</Breadcrumb.Item>
                         </Breadcrumb>
                         <h1>Ваш профиль:</h1>
+                        
                         <Row gutter={100} style={{ margin: '0 auto', maxWidth: "1200px" }}>
                             <Col span={8}>
                                 {this.state.prevObj ? (

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './style.css'
 import { Tooltip, Progress, Card } from 'antd';
 
 const { Meta } = Card;
@@ -22,7 +23,8 @@ export default class Index extends Component {
             <React.Fragment>
                 {contentObj.skill ? (
                     <Card
-                        hoverable
+                        // hoverable
+                        className="sw-skill-card"
                         style={{ textAlign: "center" }}
                         cover={(
                             <Tooltip title={contentObj.level.title}>
