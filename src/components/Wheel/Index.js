@@ -86,7 +86,7 @@ class BarChartV1 extends React.Component {
 			}
 			rawFile.send(null);
 		}
-		readTextFile("https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json");
+		readTextFile("https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/sampleData.json");
 		// this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
 		// 	.then(response => console.log(response.json().toString()))
 

@@ -1,0 +1,21 @@
+[
+    {
+        "users": {
+            "paul": {
+                "username": "ammaPaul338",
+                "hobby": "gamedev",
+                "personalAdvice": "be clear", 
+                "age": 21
+            },
+            "jessica": {
+                "username": "jessTHEbless",
+                "hobby": "cooking",
+                "personalAdvice": "dont feed the trools", 
+                "age": 23
+            }
+        },
+        "somethingmore": {
+            "test": "test"
+        }
+    }
+]
