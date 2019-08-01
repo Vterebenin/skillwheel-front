@@ -1,8 +1,10 @@
 import React from "react";
 import * as d3 from "d3";
 import { userData } from '../mocks/realdata'
+import { encode_utf8 } from '../helpers/Index'
 // эта библиотека, возможно, увеличит производительность ¯\_(ツ)_/¯
 import { withFauxDOM } from 'react-faux-dom'
+
 
 
 class BarChartV1 extends React.Component {
@@ -21,6 +23,7 @@ class BarChartV1 extends React.Component {
 			pushObj.children = this.realData.areas[key].skills
 			this.realArr.children.push(pushObj)
 		}
+		this.fetchedData = null;
 		this.realArr.children.forEach(element => {
 
 			Object.keys(element.children).map((key) => {
@@ -66,6 +69,8 @@ class BarChartV1 extends React.Component {
 
 
 	componentDidMount() {
+		this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/src/components/mocks/realdata.js`)
+			.then(response => JSON.parse((encode_utf8(response))))
 		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 
 	}
