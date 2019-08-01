@@ -69,8 +69,26 @@ class BarChartV1 extends React.Component {
 
 
 	componentDidMount() {
-		this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
-			.then(response => console.log(response.json()))
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{
+						var allText = rawFile.responseText;
+						console.log(allText, "1111111111111");
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json");
+		// this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
+		// 	.then(response => console.log(response.json().toString()))
 
 		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 
