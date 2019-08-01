@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bc5cd3faa6544731d2759d7a39cec11a",
+    "revision": "bada39374cd36b45bc1ec639bbb29004",
     "url": "/skillwheel-front/index.html"
   },
   {
-    "revision": "ff9ea5eae54a89404873",
+    "revision": "458bb425e5c3bd8b828f",
     "url": "/skillwheel-front/static/css/2.676dc204.chunk.css"
   },
   {
-    "revision": "bfc08f4a1410ed3809f5",
-    "url": "/skillwheel-front/static/css/main.96b93e23.chunk.css"
+    "revision": "c2f61c575f247af8667f",
+    "url": "/skillwheel-front/static/css/main.e5dd9d39.chunk.css"
   },
   {
-    "revision": "ff9ea5eae54a89404873",
-    "url": "/skillwheel-front/static/js/2.9a0eb2ef.chunk.js"
+    "revision": "458bb425e5c3bd8b828f",
+    "url": "/skillwheel-front/static/js/2.7953124d.chunk.js"
   },
   {
-    "revision": "bfc08f4a1410ed3809f5",
-    "url": "/skillwheel-front/static/js/main.42b46b95.chunk.js"
+    "revision": "c2f61c575f247af8667f",
+    "url": "/skillwheel-front/static/js/main.7758f48f.chunk.js"
   },
   {
     "revision": "856b0306378b1b648423",
