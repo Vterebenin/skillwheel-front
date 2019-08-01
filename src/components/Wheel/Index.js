@@ -74,14 +74,14 @@ class BarChartV1 extends React.Component {
 		}
 		function decode_utf8(s) {
 			return decodeURIComponent(escape(s));
-			}
+		}
 		let fetchedData;
 		this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
 			.then(response => response.text())
 			.then(text => {
 				console.log(JSON)
-				fetchedData = encode_utf8(text)
-				console.log(fetchedData, "ну ты бом бом")
+				fetchedData = JSON.parse(encode_utf8(encode_utf8(text)))
+				console.log(fetchedData.name)
 			})
 		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 
