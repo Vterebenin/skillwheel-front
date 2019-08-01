@@ -69,7 +69,7 @@ class BarChartV1 extends React.Component {
 
 
 	componentDidMount() {
-		this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/src/components/mocks/realdata.js`)
+		this.fetchedData = fetch(`https://vterebenin.github.io/skillwheel-front/src/components/mocks/fetchedData.json`)
 			.then(response => JSON.parse((encode_utf8(response))))
 		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 
