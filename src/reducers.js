@@ -63,7 +63,7 @@ function postsBySubreddit(state = {}, action) {
 }
 
 //*********************************************** */
-function selectedUser(state = 'huyaktjs', action) {
+function selectedUser(state = {}, action) {
   switch (action.type) {
     case SELECT_USERDATA:
       return action
@@ -76,6 +76,7 @@ function areas(
   state = {
     isFetching: false,
     didInvalidate: false,
+    user: null,
     items: []
   },
   action
@@ -94,7 +95,7 @@ function areas(
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
-        items: action.areas,
+        items: action.user,
         lastUpdated: action.receivedAt
       })
     default:
@@ -107,8 +108,10 @@ function areasByUser(state = {}, action) {
     case INVALIDATE_USERDATA:
     case RECEIVE_USER:
     case REQUEST_USER:
+      console.log("check this out", action)
       return Object.assign({}, state, {
-        [action.user]: areas(state[action.user], action)
+        lastUpdated: action.receivedAt,
+        user: action.user
       })
     default:
       return state

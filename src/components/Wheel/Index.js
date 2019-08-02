@@ -1,9 +1,13 @@
 import React from "react";
 import * as d3 from "d3";
 import { userData } from '../mocks/realdata'
-import { encode_utf8 } from '../helpers/Index'
+import { connect } from 'react-redux'
 // эта библиотека, возможно, увеличит производительность ¯\_(ツ)_/¯
 import { withFauxDOM } from 'react-faux-dom'
+import {
+	fetcharea,
+	fetchareaIfNeeded,
+} from '../../actions'
 
 
 
@@ -12,6 +16,10 @@ class BarChartV1 extends React.Component {
 	constructor(props) {
 		super(props)
 		this.handleClick = this.props.clickHandler
+		const { dispatch } = this.props
+		console.log(this.props);
+		this.fetchedData = dispatch(fetcharea('reactjs')).then((data) => console.log(data, "hello from constructor"))
+		
 		// копирование объектов в JSe это какой-то пиздец
 		this.realData = JSON.parse(JSON.stringify(userData))
 		this.realArr = this.realData
@@ -50,7 +58,7 @@ class BarChartV1 extends React.Component {
 		this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
 		this.format = d3.format(",d")
 		this.width = this.props.width || 700;
-		this.radius = this.width / 6
+		this.radius = this.width / 6 - 35
 		this.arc = d3.arc()
 			.startAngle(d => d.x0)
 			.endAngle(d => d.x1)
@@ -58,9 +66,9 @@ class BarChartV1 extends React.Component {
 			.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
 			.padRadius(this.radius * 1.5)
 			// внутренний радиус
-			.innerRadius(d => d.y0 * this.radius)
+			.innerRadius(d => d.y0 * this.radius - 35)
 			// внешний
-			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius - 1))
+			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius + 70))
 
 
 
@@ -69,49 +77,43 @@ class BarChartV1 extends React.Component {
 
 
 	componentDidMount() {
-<<<<<<< HEAD
-		let qData
-		function readTextFile(file, qData)
-		{
-			var rawFile = new XMLHttpRequest();
-			rawFile.open("GET", file, false);
-			rawFile.onreadystatechange = function ()
-			{
-				if(rawFile.readyState === 4)
-				{
-					if(rawFile.status === 200 || rawFile.status == 0)
-					{
-						var allText = rawFile.responseText;
-						qData = allText
-					}
-				}
-			}
-			rawFile.send(null);
-		}
-		qData = readTextFile("https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json", qData);
-		// this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
-		// 	.then(response => console.log(response.json().toString()))
-
-=======
-		function encode_utf8( s ){
-			return unescape( encodeURIComponent( s ) );
-		}
-		function decode_utf8(s) {
-			return decodeURIComponent(escape(s));
-		}
-		let fetchedData;
-		this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
-			.then(response => response.json())
-			.then(text => {
-				fetchedData = JSON.parse(encode_utf8(encode_utf8(text.toString())))
-				console.log(fetchedData.name)
-			})
->>>>>>> origin
+		const { dispatch, user } = this.props
+		console.log(this.props);
+		dispatch(fetchareaIfNeeded())
+		
 		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 
 	}
 
 	componentDidUpdate(prevProps, prevState) {
+		if (this.props.user !== prevProps.user) {
+			const { dispatch, user } = this.props
+			dispatch(fetchareaIfNeeded())
+			this.fetchedData  = user
+			console.log(this.fetchedData, "fetched?");
+
+			// this.realData = JSON.parse(JSON.stringify(userData))
+			// this.realArr = this.realData
+			// this.realArr.children = []
+			// for (let [key] of Object.entries(this.realData.areas)) {
+			// 	const pushObj = {}
+			// 	pushObj.color = this.realData.areas[key].color
+			// 	pushObj.title = this.realData.areas[key].title
+			// 	pushObj.children = this.realData.areas[key].skills
+			// 	this.realArr.children.push(pushObj)
+			// }
+			// this.fetchedData = null;
+			// this.realArr.children.forEach(element => {
+
+			// 	Object.keys(element.children).map((key) => {
+			// 		element.children[key].value = 2
+			// 		element.children[key].id = element.children[key].skill.id
+			// 		element.children[key].color = element.children[key].level.color
+			// 		element.children[key].title = element.children[key].skill.title
+			// 		return element
+			// 	})
+			// });
+		}
 		if (this.props.data !== prevProps.data) {
 			this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 		}
@@ -156,7 +158,7 @@ class BarChartV1 extends React.Component {
 			.data(root.descendants().slice(1))
 			.join("foreignObject")
 			.attr("class", "sk-wheel-foreign")
-			.attr("width", 150)
+			.attr("width", 230)
 			.attr("height", 100)
 			.attr("dy", "0.35em")
 			.attr("opacity", d => +labelVisible(d.current))
@@ -213,7 +215,8 @@ class BarChartV1 extends React.Component {
 				return +this.getAttribute("opacity") || labelVisible(d.target);
 			}).transition(t)
 				.attr("opacity", d => +labelVisible(d.target))
-				.attrTween("transform", d => () => labelTransform(d.current));
+				.attrTween("transform", d => () => labelTransform(d.current))
+				// .selectAll('.sk-wheel-text').node().classList.add("mynewclass");
 		}
 
 		function arcVisible(d) {
@@ -236,12 +239,30 @@ class BarChartV1 extends React.Component {
 
 	render() {
 		const { width, height } = this.props;
+		const { lastUpdated, user } = this.props
 		return (
-			<svg ref={viz => (this.viz = viz)}
-				width={width} height={height} >
-			</svg>
+			<React.Fragment>
+				{lastUpdated ? (
+					<h2>{user.name}</h2>
+				) : (
+					<h2>Загрузка...</h2>
+				)}
+				 {new Date(lastUpdated).toLocaleTimeString()}
+				<svg ref={viz => (this.viz = viz)}
+					width={width} height={height} >
+				</svg>
+			</React.Fragment>
 		);
 	}
 }
 
-export default withFauxDOM(BarChartV1);
+function mapStateToProps(state) {
+	const { areasByUser } = state
+	const { lastUpdated, user } = areasByUser
+	return {
+		lastUpdated,
+		user
+	}
+}
+
+export default connect(mapStateToProps)(withFauxDOM(BarChartV1))

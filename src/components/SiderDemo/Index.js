@@ -89,8 +89,6 @@ class SiderDemo extends React.Component {
 
     render() {
       
-
-        
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 {this.state.loading && <Loader />}

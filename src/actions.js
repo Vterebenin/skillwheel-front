@@ -72,66 +72,50 @@ export function fetchPostsIfNeeded(subreddit) {
 
 //  TESTING THINGS
 
-export function selectUser(User) {
-  return {
-    type: SELECT_USERDATA,
-    User
-  }
-}
-
-export function invalidateUser(User) {
-  return {
-    type: INVALIDATE_USERDATA,
-    User
-  }
-}
-
-function requestArea(User) {
+function requestUser(User) {
   return {
     type: REQUEST_USER,
-    User
+    user: User
   }
 }
 
-function receiveAreas(User, json) {
+function receiveAreas(json) {
   return {
     type: REQUEST_USER,
-    User,
-    area: json,//.map(child => child.name),
+    user: json,//.map(child => child.name),
     receivedAt: Date.now()
   }
 }
 
-export function fetcharea(User) {
+export function fetcharea() {
   return dispatch => {
-    dispatch(requestArea(User))
+    dispatch(requestUser())
     return fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
 			.then(response => response.json())
       .then(text => {
         text = JSON.parse(encode_utf8(encode_utf8(text.toString())))
-        console.log(text, "text from reducer")
         return text
-			}).then(json => dispatch(receiveAreas(User, json)))
+			}).then(json => dispatch(receiveAreas(json)))
 			
   }
 }
  
 
-function shouldFetchArea(state, User) {
-  const area = state.areaByUser[User]
-  if (!area) {
+function shouldFetchArea(state) {
+	const { user } = state.areasByUser
+  if (!user) {
     return true
-  } else if (area.isFetching) {
+  } else if (user.isFetching) {
     return false
   } else {
-    return area.didInvalidate
+    return user.didInvalidate
   }
 }
 
-export function fetchareaIfNeeded(User) {
+export function fetchareaIfNeeded() {
   return (dispatch, getState) => {
-    if (shouldFetchArea(getState(), User)) {
-      return dispatch(fetcharea(User))
+    if (shouldFetchArea(getState())) {
+      return dispatch(fetcharea())
     }
   }
 }

@@ -10,17 +10,17 @@
 }
 .sk-wheel-text {
   transform: translateX(-50%);
-  /* transform-origin: top left; */
-  width: 130px;
+  width: 180px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: absolute;
+  left: -20px;
 }
 .sk-wheel-foreign:nth-child(-n+6) .sk-wheel-text {
   position: absolute;
-  left: auto;
-  right: 10px;
   top: -20px;
+  left: 20px;
 }
 
 #components-layout-demo-side .logo {
