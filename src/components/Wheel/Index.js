@@ -69,6 +69,7 @@ class BarChartV1 extends React.Component {
 
 
 	componentDidMount() {
+<<<<<<< HEAD
 		let qData
 		function readTextFile(file, qData)
 		{
@@ -91,6 +92,21 @@ class BarChartV1 extends React.Component {
 		// this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
 		// 	.then(response => console.log(response.json().toString()))
 
+=======
+		function encode_utf8( s ){
+			return unescape( encodeURIComponent( s ) );
+		}
+		function decode_utf8(s) {
+			return decodeURIComponent(escape(s));
+		}
+		let fetchedData;
+		this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
+			.then(response => response.json())
+			.then(text => {
+				fetchedData = JSON.parse(encode_utf8(encode_utf8(text.toString())))
+				console.log(fetchedData.name)
+			})
+>>>>>>> origin
 		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
 
 	}
