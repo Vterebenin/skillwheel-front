@@ -15,7 +15,6 @@ export default class UserContent extends Component {
     
     
     render() {
-        console.log(userData, "from render");
         let img;
         const {grade} = this.Data;
         // console.log(grade);

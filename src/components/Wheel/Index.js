@@ -1,12 +1,11 @@
 import React from "react";
 import * as d3 from "d3";
-import { userData } from '../mocks/realdata'
 import { connect } from 'react-redux'
+import Loader from '../Loader/Index'
 // эта библиотека, возможно, увеличит производительность ¯\_(ツ)_/¯
 import { withFauxDOM } from 'react-faux-dom'
 import {
-	fetcharea,
-	fetchareaIfNeeded,
+	fetchAreaIfNeeded,
 } from '../../actions'
 
 
@@ -17,105 +16,44 @@ class BarChartV1 extends React.Component {
 		super(props)
 		this.handleClick = this.props.clickHandler
 		const { dispatch } = this.props
-		console.log(this.props);
-		this.fetchedData = dispatch(fetcharea('reactjs')).then((data) => console.log(data, "hello from constructor"))
-		
-		// копирование объектов в JSe это какой-то пиздец
-		this.realData = JSON.parse(JSON.stringify(userData))
-		this.realArr = this.realData
-		this.realArr.children = []
-		for (let [key] of Object.entries(this.realData.areas)) {
-			const pushObj = {}
-			pushObj.color = this.realData.areas[key].color
-			pushObj.title = this.realData.areas[key].title
-			pushObj.children = this.realData.areas[key].skills
-			this.realArr.children.push(pushObj)
-		}
-		this.fetchedData = null;
-		this.realArr.children.forEach(element => {
-
-			Object.keys(element.children).map((key) => {
-				element.children[key].value = 2
-				element.children[key].id = element.children[key].skill.id
-				element.children[key].color = element.children[key].level.color
-				element.children[key].title = element.children[key].skill.title
-				return element
-			})
-		});
-
-		this.partition = data => {
-			const root = d3.hierarchy(data)
-				.sum(d => d.value)
-				.sort((a, b) => b.value - a.value);
-			// во втором параметре сайза можно задать количество кругов
-			// 1 -- изначальное количество со всеми кругами.
-			// если поставить 2, будет (общее количество - 1)кругов
-			return d3.partition().size([2 * Math.PI, root.height + 2])(root);
-		}
-
-
-
-		this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
-		this.format = d3.format(",d")
-		this.width = this.props.width || 700;
-		this.radius = this.width / 6
-		this.arc = d3.arc()
-			.startAngle(d => d.x0)
-			.endAngle(d => d.x1)
-			// размер паддинга между чанками
-			.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
-			.padRadius(this.radius * 1.5)
-			// внутренний радиус
-			.innerRadius(d => d.y0 * this.radius)
-			// внешний
-			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius))
-
-
+		dispatch(fetchAreaIfNeeded())
 
 	}
 
-
-
 	componentDidMount() {
-		const { dispatch, user } = this.props
-		console.log(this.props);
-		dispatch(fetchareaIfNeeded())
-		
-		this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
-
 	}
 
 	componentDidUpdate(prevProps, prevState) {
 		if (this.props.user !== prevProps.user) {
-			const { dispatch, user } = this.props
-			dispatch(fetchareaIfNeeded())
-			this.fetchedData  = user
-			console.log(this.fetchedData, "fetched?");
+			const { dispatch, areas } = this.props
+			dispatch(fetchAreaIfNeeded())
 
-			// this.realData = JSON.parse(JSON.stringify(userData))
-			// this.realArr = this.realData
-			// this.realArr.children = []
-			// for (let [key] of Object.entries(this.realData.areas)) {
-			// 	const pushObj = {}
-			// 	pushObj.color = this.realData.areas[key].color
-			// 	pushObj.title = this.realData.areas[key].title
-			// 	pushObj.children = this.realData.areas[key].skills
-			// 	this.realArr.children.push(pushObj)
-			// }
-			// this.fetchedData = null;
-			// this.realArr.children.forEach(element => {
+			const partition = data => {
+				const root = d3.hierarchy(data)
+					.sum(d => d.value)
+					.sort((a, b) => b.value - a.value);
+				// во втором параметре сайза можно задать количество кругов
+				// 1 -- изначальное количество со всеми кругами.
+				// если поставить 2, будет (общее количество - 1)кругов
+				return d3.partition().size([2 * Math.PI, root.height + 2])(root);
+			}
 
-			// 	Object.keys(element.children).map((key) => {
-			// 		element.children[key].value = 2
-			// 		element.children[key].id = element.children[key].skill.id
-			// 		element.children[key].color = element.children[key].level.color
-			// 		element.children[key].title = element.children[key].skill.title
-			// 		return element
-			// 	})
-			// });
-		}
-		if (this.props.data !== prevProps.data) {
-			this.charts(this.partition, this.realArr, d3, this.width, this.arc, this.radius)
+			const width = this.props.width || 700;
+			const radius = width / 6
+			const arc = d3.arc()
+				.startAngle(d => d.x0)
+				.endAngle(d => d.x1)
+				// размер паддинга между чанками
+				.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
+				.padRadius(radius * 1.5)
+				// внутренний радиус
+				.innerRadius(d => d.y0 * radius)
+				// внешний
+				.outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius))
+
+			if (this.props.user !== prevProps.user) {
+				this.charts(partition, areas, d3, width, arc, radius)
+			}
 		}
 	}
 
@@ -165,14 +103,14 @@ class BarChartV1 extends React.Component {
 			.attr("transform", d => labelTransform(d.current))
 			.append("xhtml:div")
 			.attr("class", "sk-wheel-text")
-			
+
 			.html(d => d.data.title)
 
 		// переопределение таргета лейбла
 		label._groups[0] = label._groups[0].map(e => {
 			return e.parentNode
 		})
-		
+
 
 		const parent = g.append("circle")
 			.datum(root)
@@ -209,14 +147,13 @@ class BarChartV1 extends React.Component {
 				.attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
 				.attrTween("d", d => () => arc(d.current));
 
-			
-			console.log(label);
+
 			label.filter(function (d) {
 				return +this.getAttribute("opacity") || labelVisible(d.target);
 			}).transition(t)
 				.attr("opacity", d => +labelVisible(d.target))
 				.attrTween("transform", d => () => labelTransform(d.current))
-				// .selectAll('.sk-wheel-text').node().classList.add("mynewclass");
+			// .selectAll('.sk-wheel-text').node().classList.add("mynewclass");
 		}
 
 		function arcVisible(d) {
@@ -239,28 +176,30 @@ class BarChartV1 extends React.Component {
 
 	render() {
 		const { width, height } = this.props;
-		// const { lastUpdated, user } = this.props
+		const { lastUpdated } = this.props
 		return (
 			<React.Fragment>
-				{/* {lastUpdated ? (
-					<h2>{user.name}</h2>
+				{lastUpdated ? (
+					<React.Fragment>
+						<svg ref={viz => (this.viz = viz)}
+							width={width} height={height} >
+						</svg>
+					</React.Fragment>
 				) : (
-					<h2>Загрузка...</h2>
-				)} */}
-				 {/* {new Date(lastUpdated).toLocaleTimeString()} */}
-				<svg ref={viz => (this.viz = viz)}
-					width={width} height={height} >
-				</svg>
+					<Loader />
+				)}
+
 			</React.Fragment>
 		);
 	}
 }
 
 function mapStateToProps(state) {
-	const { areasByUser } = state
-	const { lastUpdated, user } = areasByUser
+	const { userData } = state
+	const { lastUpdated, user, areas } = userData
 	return {
 		lastUpdated,
+		areas,
 		user
 	}
 }
