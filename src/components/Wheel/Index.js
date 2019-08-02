@@ -69,7 +69,8 @@ class BarChartV1 extends React.Component {
 
 
 	componentDidMount() {
-		function readTextFile(file)
+		let qData
+		function readTextFile(file, qData)
 		{
 			var rawFile = new XMLHttpRequest();
 			rawFile.open("GET", file, false);
@@ -80,13 +81,13 @@ class BarChartV1 extends React.Component {
 					if(rawFile.status === 200 || rawFile.status == 0)
 					{
 						var allText = rawFile.responseText;
-						console.log(allText, "1111111111111");
+						qData = allText
 					}
 				}
 			}
 			rawFile.send(null);
 		}
-		readTextFile("https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json");
+		qData = readTextFile("https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json", qData);
 		// this.fetchedData = fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
 		// 	.then(response => console.log(response.json().toString()))
 
