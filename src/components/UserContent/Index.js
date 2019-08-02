@@ -1,8 +1,9 @@
 import { Card } from 'antd'
 import React, { Component } from 'react'
 import { userData } from '../mocks/realdata';
-import imgPiggy from './files/piggy.jpg'
-import imgNotPiggy from './files/notpiggy.jpg'
+import imgLvl1 from './files/lvl1.jpg'
+import imgLvl2 from './files/lvl2.jpg'
+import imgLvl3 from './files/lvl3.jpg'
 const { Meta } = Card;
 
 export default class UserContent extends Component {
@@ -20,13 +21,13 @@ export default class UserContent extends Component {
         // console.log(grade);
         switch (grade.toLowerCase()) {
             case "ученик":
-                img = imgPiggy        
+                img = imgLvl2        
                 break;
             case "мастер":
-                img = imgNotPiggy        
+                img = imgLvl3        
                 break;
             default:
-                img = imgPiggy        
+                img = imgLvl1        
                 break;
         }
 
