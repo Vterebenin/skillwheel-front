@@ -10,12 +10,11 @@
 }
 .sk-wheel-text {
   transform: translateX(-50%);
-  width: 180px;
+  width: 120px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   position: absolute;
-  left: -20px;
 }
 .sk-wheel-foreign:nth-child(-n+6) .sk-wheel-text {
   position: absolute;

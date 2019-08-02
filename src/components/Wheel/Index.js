@@ -58,7 +58,7 @@ class BarChartV1 extends React.Component {
 		this.realColor = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, this.realArr.children.length + 1))
 		this.format = d3.format(",d")
 		this.width = this.props.width || 700;
-		this.radius = this.width / 6 - 35
+		this.radius = this.width / 6
 		this.arc = d3.arc()
 			.startAngle(d => d.x0)
 			.endAngle(d => d.x1)
@@ -66,9 +66,9 @@ class BarChartV1 extends React.Component {
 			.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
 			.padRadius(this.radius * 1.5)
 			// внутренний радиус
-			.innerRadius(d => d.y0 * this.radius - 35)
+			.innerRadius(d => d.y0 * this.radius)
 			// внешний
-			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius + 70))
+			.outerRadius(d => Math.max(d.y0 * this.radius, d.y1 * this.radius))
 
 
 
@@ -158,7 +158,7 @@ class BarChartV1 extends React.Component {
 			.data(root.descendants().slice(1))
 			.join("foreignObject")
 			.attr("class", "sk-wheel-foreign")
-			.attr("width", 230)
+			.attr("width", 150)
 			.attr("height", 100)
 			.attr("dy", "0.35em")
 			.attr("opacity", d => +labelVisible(d.current))
@@ -239,15 +239,15 @@ class BarChartV1 extends React.Component {
 
 	render() {
 		const { width, height } = this.props;
-		const { lastUpdated, user } = this.props
+		// const { lastUpdated, user } = this.props
 		return (
 			<React.Fragment>
-				{lastUpdated ? (
+				{/* {lastUpdated ? (
 					<h2>{user.name}</h2>
 				) : (
 					<h2>Загрузка...</h2>
-				)}
-				 {new Date(lastUpdated).toLocaleTimeString()}
+				)} */}
+				 {/* {new Date(lastUpdated).toLocaleTimeString()} */}
 				<svg ref={viz => (this.viz = viz)}
 					width={width} height={height} >
 				</svg>
