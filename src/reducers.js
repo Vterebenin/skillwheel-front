@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import {
   REQUEST_USER,
   REQUEST_AREAS,
+  GET_SKILL
 } from './actions'
 
 //*********************************************** */
@@ -16,40 +17,6 @@ function selectedUser(state = {}, action) {
   }
 }
 
-
-
-
-// function areas(
-//   state = {
-//     isFetching: false,
-//     didInvalidate: false,
-//     user: null,
-//     lastUpdated: null
-//   },
-//   action
-// ) {
-//   switch (action.type) {
-//     case INVALIDATE_USERDATA:
-//       return Object.assign({}, state, {
-//         didInvalidate: true
-//       })
-//     case REQUEST_AREAS:
-//       return Object.assign({}, state, {
-//         isFetching: true,
-//         didInvalidate: false
-//       })
-//     case RECEIVE_USER:
-//       return Object.assign({}, state, {
-//         isFetching: false,
-//         didInvalidate: false,
-//         user: action.user,
-//         lastUpdated: action.receivedAt
-//       })
-//     default:
-//       return state
-//   }
-// }
-
 function userAreas(state = {}, action) {
   switch (action.type) {
     case REQUEST_AREAS:
@@ -63,11 +30,24 @@ function userAreas(state = {}, action) {
   }
 }
 
+function skillOfClickedArea(state = {}, action) {
+  switch (action.type) {
+    case GET_SKILL:
+      return Object.assign({}, state, {
+        skillId: action.skillId,
+        currentSkill: action.currentSkill
+      })
+    default:
+      return state
+  }
+}
+
 
 /************************************************ */
 
 const rootReducer = combineReducers({
   userAreas,
+  skillOfClickedArea,
   selectedUser
 })
 

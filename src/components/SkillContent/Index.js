@@ -1,19 +1,22 @@
 import React, { Component } from 'react'
 import './style.css'
+import { connect } from 'react-redux'
 import { Tooltip, Progress, Card } from 'antd';
-
 const { Meta } = Card;
 
-export default class Index extends Component {
+class Index extends Component {
+  
+    
     render() {
-        const { contentObj } = this.props;
-        console.log(contentObj, "obj")
+        const { currentSkill, skillId } = this.props;
         const Desc = () => {
             return ( 
                 <React.Fragment>
-                    <h2>{contentObj.skill.title}</h2>
-                    
-                    <h3>Оценка: {contentObj.level.title}</h3>
+                    <h2>{currentSkill.skill.title}</h2>
+                    {skillId && 
+                        <h3>{skillId}</h3>
+                    }
+                    <h3>Оценка: {currentSkill.level.title}</h3>
                     <h4>Какое-нибудь описание для этого скила? description сейчас "null"</h4>
                 </React.Fragment>
             )
@@ -21,19 +24,19 @@ export default class Index extends Component {
         return (
             
             <React.Fragment>
-                {contentObj.skill ? (
+                {currentSkill.skill ? (
                     <Card
                         // hoverable
                         className="sw-skill-card"
                         style={{ textAlign: "center" }}
                         cover={(
-                            <Tooltip title={contentObj.level.title}>
+                            <Tooltip title={currentSkill.level.title}>
                                 <Progress
                                     strokeColor={{
                                         '0%': '#11998e',
                                         '100%': '#38ef7d',
                                     }}
-                                    percent={contentObj.level.percent}
+                                    percent={currentSkill.level.percent}
                                     type="circle"
                                 />
                             </Tooltip>
@@ -48,3 +51,12 @@ export default class Index extends Component {
         )
     }
 }
+function mapStateToProps(state) {
+    const { skillId, currentSkill } = state.skillOfClickedArea
+    return {
+        currentSkill,
+        skillId,
+    }
+}
+
+export default connect(mapStateToProps)(Index)

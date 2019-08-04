@@ -5,8 +5,9 @@ import Wheel from '../Wheel/Index'
 import Loader from '../Loader/Index';
 import UserContent from '../UserContent/Index';
 import SkillContent from '../SkillContent/Index'
+import { connect } from 'react-redux';
 import { userData } from '../mocks/realdata'
-
+import { getSkill } from '../../actions';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -19,8 +20,6 @@ class SiderDemo extends React.Component {
             content: true,
             prevObj: null
         };
-        this.prevObj = null;
-        this.tarObj = null;
         this.onButtonClick = this.onButtonClick.bind(this)
         this.skillClick = this.skillClick.bind(this)
     }
@@ -52,39 +51,15 @@ class SiderDemo extends React.Component {
         console.log(this.state.content)
     }
 
-    searchObj(obj, id) {
-        
-        for (var key in obj) {
-            var value = obj[key];
-            
-            if (typeof value === 'object') {
-                if ((obj !== null) && (obj.hasOwnProperty('skill'))) {
-                    this.prevObj = obj
-                    
-                }
-                this.searchObj(value, id);
-            }
-            if (key === "id") {
-                if (value === id) {
-                    this.setState({
-                        prevObj: this.prevObj
-                    })
-                    this.tarObj = this.prevObj 
-                    console.log('property=' + key + ' value=' + value);
-                    return this.prevObj
-                }
-            }
-        }
-    }
 
     skillClick(content) {
-        this.searchObj(userData, content.data.id)
-        if (this.state.prevObj !== null) {
+        const { dispatch } = this.props
+        dispatch(getSkill(content.data.id))
+        if (this.state.skillId !== null) {
             this.setState({
                 content: false
             })
         } 
-        console.log("this.tarObj", this.tarObj);
     }
 
     render() {
@@ -157,7 +132,7 @@ class SiderDemo extends React.Component {
                                 {this.state.content ? (
                                     <UserContent />
                                 ) : (
-                                    <SkillContent contentObj={this.state.prevObj} />
+                                    <SkillContent  />
                                 )}
 
                             </Col>
@@ -172,5 +147,10 @@ class SiderDemo extends React.Component {
         );
     }
 }
-
-export default SiderDemo
+function mapStateToProps(state) {
+    const { skillId } = state.skillOfClickedArea
+    return {
+        skillId,
+    }
+}
+export default connect(mapStateToProps)(SiderDemo) 
