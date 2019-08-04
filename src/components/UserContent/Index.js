@@ -1,7 +1,6 @@
 import { Card } from 'antd'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { userData } from '../mocks/realdata';
 import Loader from '../Loader/Index'
 import imgLvl1 from './files/lvl1.jpg'
 import imgLvl2 from './files/lvl2.jpg'
@@ -14,7 +13,6 @@ const { Meta } = Card;
 class UserContent extends Component {
     constructor(props) {
         super(props)
-        this.Data = userData;
         const { dispatch } = this.props
         dispatch(fetchUserIfNeeded())
     }

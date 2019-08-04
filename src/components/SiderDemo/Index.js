@@ -6,7 +6,6 @@ import Loader from '../Loader/Index';
 import UserContent from '../UserContent/Index';
 import SkillContent from '../SkillContent/Index'
 import { connect } from 'react-redux';
-import { userData } from '../mocks/realdata'
 import { getSkill } from '../../actions';
 const { Content } = Layout;
 const { SubMenu } = Menu;
@@ -58,7 +57,7 @@ class SiderDemo extends React.Component {
 	}
 
 	render() {
-
+		const { user } = this.props
 		return (
 			<Layout style={{ minHeight: '100vh' }}>
 				{this.state.loading && <Loader />}
@@ -99,7 +98,7 @@ class SiderDemo extends React.Component {
 					<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1200px" }}>
 						<Breadcrumb style={{ margin: '16px 0' }}>
 							<Breadcrumb.Item>Мой профиль</Breadcrumb.Item>
-							<Breadcrumb.Item>{userData.name}</Breadcrumb.Item>
+							{user && <Breadcrumb.Item>{user.name}</Breadcrumb.Item>}
 						</Breadcrumb>
 						<h1>Ваш профиль:</h1>
 						<Col span={8}>
@@ -129,7 +128,9 @@ class SiderDemo extends React.Component {
 }
 function mapStateToProps(state) {
 	const { skillId } = state.skillOfClickedArea
+	const { user } = state.selectedUser
 	return {
+		user,
 		skillId,
 	}
 }

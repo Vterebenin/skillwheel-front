@@ -13,9 +13,9 @@ class Index extends Component {
             return ( 
                 <React.Fragment>
                     <h2>{currentSkill.skill.title}</h2>
-                    {skillId && 
+                    {/* {skillId && 
                         <h3>{skillId}</h3>
-                    }
+                    } */}
                     <h3>Оценка: {currentSkill.level.title}</h3>
                     <h4>Какое-нибудь описание для этого скила? description сейчас "null"</h4>
                 </React.Fragment>
