@@ -7,7 +7,7 @@ import imgLvl1 from './files/lvl1.jpg'
 import imgLvl2 from './files/lvl2.jpg'
 import imgLvl3 from './files/lvl3.jpg'
 import {
-    fetchAreaIfNeeded,
+    fetchUserIfNeeded
 } from '../../actions'
 const { Meta } = Card;
 
@@ -16,21 +16,20 @@ class UserContent extends Component {
         super(props)
         this.Data = userData;
         const { dispatch } = this.props
-        dispatch(fetchAreaIfNeeded())
+        dispatch(fetchUserIfNeeded())
     }
 
     componentDidUpdate(prevProps, prevState) {
+        
         if (this.props.user !== prevProps.user) {
             const { dispatch } = this.props
-            dispatch(fetchAreaIfNeeded())
+            dispatch(fetchUserIfNeeded())
         }
     }
 
     render() {
         let img;
         const { user } = this.props
-        console.log(user, "here");
-        // console.log(grade);
         if (user) {
             const { grade } = user
             switch (grade.toLowerCase()) {
@@ -72,10 +71,9 @@ class UserContent extends Component {
 }
 
 function mapStateToProps(state) {
-    const { lastUpdated, user } = state.userData
+    const { user } = state.selectedUser
     return {
-        lastUpdated,
-        user
+        user,
     }
 }
 

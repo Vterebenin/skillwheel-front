@@ -1,19 +1,23 @@
 import { combineReducers } from 'redux'
 import {
-  INVALIDATE_USERDATA,
   REQUEST_USER,
-  RECEIVE_USER,
+  REQUEST_AREAS,
 } from './actions'
 
 //*********************************************** */
-// function selectedUser(state = null, action) {
-//   switch (action.type) {
-//     case SELECT_USERDATA:
-//       return action.user.name
-//     default:
-//       return state
-//   }
-// }
+function selectedUser(state = {}, action) {
+  switch (action.type) {
+    case REQUEST_USER:
+      return Object.assign({}, state, {
+        user: action.user,
+      })
+    default:
+      return state
+  }
+}
+
+
+
 
 // function areas(
 //   state = {
@@ -29,7 +33,7 @@ import {
 //       return Object.assign({}, state, {
 //         didInvalidate: true
 //       })
-//     case REQUEST_USER:
+//     case REQUEST_AREAS:
 //       return Object.assign({}, state, {
 //         isFetching: true,
 //         didInvalidate: false
@@ -46,11 +50,9 @@ import {
 //   }
 // }
 
-function userData(state = {}, action) {
+function userAreas(state = {}, action) {
   switch (action.type) {
-    case INVALIDATE_USERDATA:
-    case RECEIVE_USER:
-    case REQUEST_USER:
+    case REQUEST_AREAS:
       return Object.assign({}, state, {
         lastUpdated: action.receivedAt,
         user: action.user,
@@ -61,10 +63,13 @@ function userData(state = {}, action) {
   }
 }
 
+
 /************************************************ */
 
 const rootReducer = combineReducers({
-  userData
+  userAreas,
+  selectedUser
 })
+
 
 export default rootReducer

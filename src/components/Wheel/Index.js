@@ -24,7 +24,7 @@ class BarChartV1 extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.user !== prevProps.user) {
+		if (this.props.areas !== prevProps.areas) {
 			const { dispatch, areas } = this.props
 			dispatch(fetchAreaIfNeeded())
 
@@ -51,9 +51,7 @@ class BarChartV1 extends React.Component {
 				// внешний
 				.outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius))
 
-			if (this.props.user !== prevProps.user) {
-				this.charts(partition, areas, d3, width, arc, radius)
-			}
+			this.charts(partition, areas, d3, width, arc, radius)
 		}
 	}
 
@@ -176,10 +174,10 @@ class BarChartV1 extends React.Component {
 
 	render() {
 		const { width, height } = this.props;
-		const { lastUpdated } = this.props
+		const { areas } = this.props
 		return (
 			<React.Fragment>
-				{lastUpdated ? (
+				{areas ? (
 					<React.Fragment>
 						<svg ref={viz => (this.viz = viz)}
 							width={width} height={height} >
@@ -195,12 +193,9 @@ class BarChartV1 extends React.Component {
 }
 
 function mapStateToProps(state) {
-	const { userData } = state
-	const { lastUpdated, user, areas } = userData
+	const { areas } = state.userAreas
 	return {
-		lastUpdated,
-		areas,
-		user
+		areas
 	}
 }
 
