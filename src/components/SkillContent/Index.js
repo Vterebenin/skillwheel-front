@@ -8,7 +8,7 @@ class Index extends Component {
   
     
     render() {
-        const { currentSkill, skillId } = this.props;
+        const { currentSkill } = this.props;
         const Desc = () => {
             return ( 
                 <React.Fragment>
