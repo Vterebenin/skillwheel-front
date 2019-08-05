@@ -1,58 +1,16 @@
-.App {
-  text-align: center;
-}
-/* * {
-  transition: all 0.5s;
-} */
-
 .sk-wheel-foreign {
   overflow: visible;
 }
-.sk-wheel-text {
+.sk-wheel-parent,
+.sk-wheel-child {
   transform: translateX(-50%);
-  width: 120px;
+  width: 160px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   position: absolute;
+  right: 40px;
 }
-.sk-wheel-foreign:nth-child(-n+6) .sk-wheel-text {
+.sk-wheel-child {
   position: absolute;
-  top: -20px;
-  left: 20px;
-}
-
-#components-layout-demo-side .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
-}
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -47,7 +47,7 @@ class BarChartV1 extends React.Component {
 				.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
 				.padRadius(radius * 1.5)
 				// внутренний радиус
-				.innerRadius(d => d.y0 * radius)
+				.innerRadius(d => d.y0 * radius - 75)
 				// внешний
 				.outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius))
 
@@ -55,7 +55,7 @@ class BarChartV1 extends React.Component {
 		}
 	}
 
-
+	// * немного магии...
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
 		root.each(d => d.current = d);
@@ -94,17 +94,17 @@ class BarChartV1 extends React.Component {
 			.data(root.descendants().slice(1))
 			.join("foreignObject")
 			.attr("class", "sk-wheel-foreign")
-			.attr("width", 150)
+			.attr("width", 200)
 			.attr("height", 100)
 			.attr("dy", "0.35em")
 			.attr("opacity", d => +labelVisible(d.current))
 			.attr("transform", d => labelTransform(d.current))
 			.append("xhtml:div")
 			.attr("class", "sk-wheel-text")
-
+			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-wheel-parent" : "sk-wheel-child") : "sk-wheel-child")
 			.html(d => d.data.title)
 
-		// переопределение таргета лейбла
+		// переопределение таргета лейбла с дива на foreignObject
 		label._groups[0] = label._groups[0].map(e => {
 			return e.parentNode
 		})
@@ -119,8 +119,9 @@ class BarChartV1 extends React.Component {
 
 		function clicked(p) {
 			parent.datum(p.parent || root);
-
+			console.log(p.depth, )
 			root.each(d => {
+
 				d.target = {
 					x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
 					x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
@@ -184,8 +185,8 @@ class BarChartV1 extends React.Component {
 						</svg>
 					</React.Fragment>
 				) : (
-					<Loader />
-				)}
+						<Loader />
+					)}
 
 			</React.Fragment>
 		);
