@@ -7,9 +7,9 @@ const { SubMenu } = Menu;
 class Index extends Component {
 
 	render() {
-    const { children } = this.props
+		const { children } = this.props
 		return (
-			<Layout style={{ minHeight: '100vh' }}>
+			<Layout style={{ minHeight: '100vh', maxWidth: '1920px', margin: "0 auto", width: "100%" }}>
 
 				<Menu theme="light" mode="horizontal" style={{ textAlign: "right" }}>
 
@@ -44,8 +44,8 @@ class Index extends Component {
 				</Menu>
 				<Content style={{ margin: '0 16px' }}>
 
-            {children}
-					
+					{children}
+
 				</Content>
 			</Layout>
 		);

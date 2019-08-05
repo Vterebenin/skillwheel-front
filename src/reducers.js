@@ -9,9 +9,10 @@ import {
 function selectedUser(state = {}, action) {
   switch (action.type) {
     case REQUEST_USER:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         user: action.user,
-      })
+      }
     default:
       return state
   }
@@ -20,11 +21,12 @@ function selectedUser(state = {}, action) {
 function userAreas(state = {}, action) {
   switch (action.type) {
     case REQUEST_AREAS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         lastUpdated: action.receivedAt,
         user: action.user,
         areas: action.areasForWheel
-      })
+      }
     default:
       return state
   }
@@ -33,10 +35,11 @@ function userAreas(state = {}, action) {
 function skillOfClickedArea(state = {}, action) {
   switch (action.type) {
     case GET_SKILL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         skillId: action.skillId,
         currentSkill: action.currentSkill
-      })
+      }
     default:
       return state
   }

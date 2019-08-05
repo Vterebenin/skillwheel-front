@@ -17,7 +17,9 @@ class SkillWheel extends React.Component {
 		this.handleClick = this.props.clickHandler
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
-
+		this.podskazka = (name) => {
+			return <h1>{name}</h1> 
+		}
 	}
 
 	componentDidMount() {
@@ -54,8 +56,7 @@ class SkillWheel extends React.Component {
 			this.charts(partition, areas, d3, width, arc, radius)
 		}
 	}
-
-	// * немного магии...
+	// 🌟немного магии🌟
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
 		root.each(d => d.current = d);
@@ -119,9 +120,7 @@ class SkillWheel extends React.Component {
 
 		function clicked(p) {
 			parent.datum(p.parent || root);
-			console.log(p.depth)
 			root.each(d => {
-
 				d.target = {
 					x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
 					x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,

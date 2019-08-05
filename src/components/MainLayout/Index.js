@@ -58,7 +58,7 @@ class SiderDemo extends React.Component {
 		const { user } = this.props
 		return (
 			<MainWrapper>
-				<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1200px" }}>
+				<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1280px" }}>
 					<Breadcrumb style={{ margin: '16px 0' }}>
 						<Breadcrumb.Item>Мой профиль</Breadcrumb.Item>
 						{user && <Breadcrumb.Item>{user.name}</Breadcrumb.Item>}
