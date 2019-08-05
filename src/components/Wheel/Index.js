@@ -10,7 +10,7 @@ import {
 
 
 
-class BarChartV1 extends React.Component {
+class SkillWheel extends React.Component {
 
 	constructor(props) {
 		super(props)
@@ -119,7 +119,7 @@ class BarChartV1 extends React.Component {
 
 		function clicked(p) {
 			parent.datum(p.parent || root);
-			console.log(p.depth, )
+			console.log(p.depth)
 			root.each(d => {
 
 				d.target = {
@@ -179,14 +179,12 @@ class BarChartV1 extends React.Component {
 		return (
 			<React.Fragment>
 				{areas ? (
-					<React.Fragment>
-						<svg ref={viz => (this.viz = viz)}
-							width={width} height={height} >
-						</svg>
-					</React.Fragment>
+					<svg ref={viz => (this.viz = viz)}
+						width={width} height={height} >
+					</svg>
 				) : (
-						<Loader />
-					)}
+					<Loader />
+				)}
 
 			</React.Fragment>
 		);
@@ -200,4 +198,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(withFauxDOM(BarChartV1))
+export default connect(mapStateToProps)(withFauxDOM(SkillWheel))
