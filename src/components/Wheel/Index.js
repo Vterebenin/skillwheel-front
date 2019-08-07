@@ -7,6 +7,7 @@ import { withFauxDOM } from 'react-faux-dom'
 import {
 	fetchAreaIfNeeded,
 } from '../../actions'
+import { Tooltip } from "antd";
 
 
 
@@ -15,11 +16,10 @@ class SkillWheel extends React.Component {
 	constructor(props) {
 		super(props)
 		this.handleClick = this.props.clickHandler
+		this.handleMouseOver = this.props.mouseoverHandler
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
-		this.podskazka = (name) => {
-			return <h1>{name}</h1> 
-		}
+		this.dispatch = dispatch
 	}
 
 	componentDidMount() {
@@ -56,7 +56,10 @@ class SkillWheel extends React.Component {
 			this.charts(partition, areas, d3, width, arc, radius)
 		}
 	}
-	// 🌟немного магии🌟
+
+	
+
+	// 🌟немного магии🌟🐽
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
 		root.each(d => d.current = d);
@@ -73,20 +76,24 @@ class SkillWheel extends React.Component {
 			.join("path")
 			.attr("fill", d => { return d.data.color })
 			.attr("id", d => d.data.id)
+			.attr("data-name", d => d.data.title)
+
 			// цвет интенсивности закраски чанков 
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
 			.attr("d", d => arc(d.current))
-			.on("click", this.handleClick);
+			.on("click", this.handleClick)
+			.on("mouseover", this.handleMouseOver)
 
 
 		path.filter(d => d.children)
 			.style("cursor", "pointer")
-			.on("click", clicked);
+			.on("click", clicked)
 
 		path.append("title")
 			.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n`);
 
-
+		let newEl = <Tooltip>123</Tooltip>
+		console.log(newEl);
 		let label = g.append("g")
 			.attr("pointer-events", "none")
 			.attr("text-anchor", "middle")
@@ -101,14 +108,18 @@ class SkillWheel extends React.Component {
 			.attr("opacity", d => +labelVisible(d.current))
 			.attr("transform", d => labelTransform(d.current))
 			.append("xhtml:div")
-			.attr("class", "sk-wheel-text")
-			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-wheel-parent" : "sk-wheel-child") : "sk-wheel-child")
+			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-wheel-text sk-wheel-parent" : "sk-wheel-text sk-wheel-child") : "sk-wheel-text sk-wheel-child")
 			.html(d => d.data.title)
 
 		// переопределение таргета лейбла с дива на foreignObject
 		label._groups[0] = label._groups[0].map(e => {
+			// var t = document.createElement('div')
+			// let element = e.parentNode.insertBefore(t, this.nextSibling)
+			// element.setAttribute("class", "supertest")
+			// element.innerHTML = e.innerHTML
 			return e.parentNode
 		})
+		
 
 
 		const parent = g.append("circle")
@@ -116,6 +127,7 @@ class SkillWheel extends React.Component {
 			.attr("r", radius)
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
+			.on("mouseover", this.handleMouseOver)
 			.on("click", clicked);
 
 		function clicked(p) {
@@ -192,8 +204,10 @@ class SkillWheel extends React.Component {
 
 function mapStateToProps(state) {
 	const { areas } = state.userAreas
+	const { skillName } = state.nameOfHoveredArea
 	return {
-		areas
+		areas,
+		skillName
 	}
 }
 

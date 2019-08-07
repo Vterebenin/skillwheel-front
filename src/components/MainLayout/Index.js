@@ -5,7 +5,7 @@ import Wheel from '../Wheel/Index'
 import UserContent from '../UserContent/Index';
 import SkillContent from '../SkillContent/Index'
 import { connect } from 'react-redux';
-import { getSkill } from '../../actions';
+import { getSkill, getSkillName } from '../../actions';
 import MainWrapper from "../MainWrapper/Index";
 
 
@@ -17,6 +17,8 @@ class SiderDemo extends React.Component {
 		};
 		this.onButtonClick = this.onButtonClick.bind(this)
 		this.skillClick = this.skillClick.bind(this)
+		this.mouseoverHandler = this.mouseoverHandler.bind(this)
+
 	}
 
 	componentDidMount() {
@@ -28,7 +30,6 @@ class SiderDemo extends React.Component {
 
 
 	onCollapse = collapsed => {
-		console.log(collapsed);
 		this.setState({ collapsed });
 	};
 
@@ -40,18 +41,31 @@ class SiderDemo extends React.Component {
 		} else {
 			alert("take a look at the skill")
 		}
-		console.log(this.state.content)
 	}
 
 
 	skillClick(content) {
 		const { dispatch } = this.props
 		dispatch(getSkill(content.data.id))
+		console.log(this);
 		if (this.state.skillId !== null) {
 			this.setState({
 				content: false
 			})
 		}
+	}
+
+	mouseoverHandler(content) {
+		// const { dispatch } = this.props
+		// if (content.da)
+		// dispatch(getSkill(content.data.id))
+		// console.log(this);
+		// if (this.state.skillId !== null) {
+		// 	this.setState({
+		// 		content: false
+		// 	})
+		// }
+		console.log(content.data.title)
 	}
 
 	render() {
@@ -83,7 +97,7 @@ class SiderDemo extends React.Component {
 
 					</Col>
 					<Col span={16}>
-						<Wheel clickHandler={this.skillClick} />
+						<Wheel mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
 					</Col>
 				</Row>
 			</MainWrapper>
@@ -93,8 +107,10 @@ class SiderDemo extends React.Component {
 function mapStateToProps(state) {
 	const { skillId } = state.skillOfClickedArea
 	const { user } = state.selectedUser
+	const { skillname } = state.nameOfHoveredArea
 	return {
 		user,
+		skillname,
 		skillId,
 	}
 }

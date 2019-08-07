@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, } from 'antd';
-// import { getSkill } from '../../actions';
 const { Content } = Layout;
 const { SubMenu } = Menu;
 

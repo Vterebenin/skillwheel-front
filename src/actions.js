@@ -4,6 +4,7 @@ import { encode_utf8 } from './components/helpers/Index'
 export const REQUEST_AREAS = 'REQUEST_AREAS'
 export const REQUEST_USER = 'REQUEST_USER'
 export const GET_SKILL = 'GET_SKILL'
+export const GET_SKILLNAME = 'GET_SKILLNAME'
 
 // ************************
 // ! REQUEST_USER START
@@ -115,7 +116,7 @@ function transformAreasForWheel(json) {
 // ************************
 
 // ************************
-// !GET_SKILL END
+// !GET_SKILL start
 // ************************
 
 export function getSkill(skillId) {
@@ -125,6 +126,7 @@ export function getSkill(skillId) {
     dispatch(getCurrentSKill(skillId, currentSkill));
   }
 }
+
 
 function getCurrentSKill(skillId, currentSkill) {
   return {
@@ -162,3 +164,21 @@ function findSkill(obj, id) {
   return tarObj
 }
 
+
+export function getSkillName(skillId) {
+  return (dispatch, getState) => {
+    const { user } = getState().userAreas;
+    console.log(user)
+    let currentSkill = findSkill(user, skillId);
+
+    dispatch(getCurrentSKillName(skillId, currentSkill));
+  }
+}
+function getCurrentSKillName(skillId, currentSkill) {
+  return {
+    type: GET_SKILLNAME,
+    skillId: skillId,
+    skillName: currentSkill.skill.title,
+    // skillObj: searchObj(user, skillId),
+  }
+}
