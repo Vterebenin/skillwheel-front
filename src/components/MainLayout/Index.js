@@ -19,9 +19,16 @@ class SiderDemo extends React.Component {
 			title: undefined,
 			coordinates: {
 				x: 0,
-				y: 9,
+				y: 0,
+				wheelX: 0,
+				wheelY: 0
+			},
+			wheelSize: {
+				width: 0,
+				height: 0
 			}
 		};
+	
 		this.onButtonClick = this.onButtonClick.bind(this)
 		this.skillClick = this.skillClick.bind(this)
 		this.mouseoverHandler = this.mouseoverHandler.bind(this)
@@ -56,6 +63,7 @@ class SiderDemo extends React.Component {
 		const { dispatch } = this.props
 		dispatch(getSkill(content.data.id))
 		console.log(this);
+		
 		if (this.state.skillId !== null) {
 			this.setState({
 				content: false
@@ -69,24 +77,29 @@ class SiderDemo extends React.Component {
 
 	mouseoverHandler(e) {
 		// console.log(content)
-		console.log(e )
-		console.log( d3.event.pageX, d3.event.pageY )
-		
 		this.setState({
 			title: e.data.title,
 			coordinates: {
 				x: d3.event.pageX,
 				y: d3.event.pageY,
+				wheelX: this.divElement.offsetLeft,
+				wheelY: this.divElement.offsetTop
+			},
+			wheelSize: {
+				width: this.divElement.clientHeight,
+				height: this.divElement.clientWidth
 			}
 		})
+		console.log(this.state);
 
 	}
 
 	render() {
 		const { user } = this.props
-		const { title, coordinates } = this.state
+		const { title, coordinates, wheelSize } = this.state
 		return (
 			<MainWrapper>
+				<PieTitle title={title} coordinates={coordinates} wSize={wheelSize} />
 				<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1280px" }}>
 					<Breadcrumb style={{ margin: '16px 0' }}>
 						<Breadcrumb.Item>Мой профиль</Breadcrumb.Item>
@@ -115,8 +128,9 @@ class SiderDemo extends React.Component {
 
 					</Col>
 					<Col span={16}>
-						<Wheel mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
-						<PieTitle title={title} coordinates={coordinates} />
+						<div ref={ (divElement) => this.divElement = divElement}>
+							<Wheel  mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
+						</div>
 					</Col>
 				</Row>
 			</MainWrapper>

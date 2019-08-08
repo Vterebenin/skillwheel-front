@@ -14,3 +14,23 @@
 .sk-wheel-child {
   position: absolute;
 }
+.sk-tooltip {
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  background: red;
+  border-radius: 50%;
+  z-index: 11;
+  visibility: hidden;
+  pointer-events: none;
+}
+@keyframes tooltipAppear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
