@@ -5,8 +5,10 @@ import Wheel from '../Wheel/Index'
 import UserContent from '../UserContent/Index';
 import SkillContent from '../SkillContent/Index'
 import { connect } from 'react-redux';
-import { getSkill, getSkillName } from '../../actions';
+import { getSkill } from '../../actions';
 import MainWrapper from "../MainWrapper/Index";
+import PieTitle from '../PieTitle/Index';
+import * as d3 from "d3";
 
 
 class SiderDemo extends React.Component {
@@ -14,10 +16,16 @@ class SiderDemo extends React.Component {
 		super(props);
 		this.state = {
 			content: true,
+			title: undefined,
+			coordinates: {
+				x: 0,
+				y: 9,
+			}
 		};
 		this.onButtonClick = this.onButtonClick.bind(this)
 		this.skillClick = this.skillClick.bind(this)
 		this.mouseoverHandler = this.mouseoverHandler.bind(this)
+
 
 	}
 
@@ -55,21 +63,28 @@ class SiderDemo extends React.Component {
 		}
 	}
 
-	mouseoverHandler(content) {
-		// const { dispatch } = this.props
-		// if (content.da)
-		// dispatch(getSkill(content.data.id))
-		// console.log(this);
-		// if (this.state.skillId !== null) {
-		// 	this.setState({
-		// 		content: false
-		// 	})
-		// }
-		console.log(content.data.title)
+	mousemoveWheel(e) {
+		console.log(e.screenX)
+	}
+
+	mouseoverHandler(e) {
+		// console.log(content)
+		console.log(e )
+		console.log( d3.event.pageX, d3.event.pageY )
+		
+		this.setState({
+			title: e.data.title,
+			coordinates: {
+				x: d3.event.pageX,
+				y: d3.event.pageY,
+			}
+		})
+
 	}
 
 	render() {
 		const { user } = this.props
+		const { title, coordinates } = this.state
 		return (
 			<MainWrapper>
 				<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1280px" }}>
@@ -79,15 +94,18 @@ class SiderDemo extends React.Component {
 					</Breadcrumb>
 					<h1>Ваш профиль:</h1>
 					<Col span={8}>
-						{this.props.skillId ? (
-							<Button onClick={this.onButtonClick}>
-								{this.state.content ? 'Посмотреть текущий скилл' : 'Назад в профиль'}
-							</Button>
-						) : (
+						{this.props.skillId
+							? (
+								<Button onClick={this.onButtonClick}>
+									{this.state.content ? 'Посмотреть текущий скилл' : 'Назад в профиль'}
+								</Button>
+							)
+							: (
 								<Button disabled>
 									{this.state.content ? 'Посмотреть текущий скилл' : 'Назад в профиль'}
 								</Button>
-							)}
+							)
+						}
 
 						{this.state.content ? (
 							<UserContent />
@@ -98,6 +116,7 @@ class SiderDemo extends React.Component {
 					</Col>
 					<Col span={16}>
 						<Wheel mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
+						<PieTitle title={title} coordinates={coordinates} />
 					</Col>
 				</Row>
 			</MainWrapper>

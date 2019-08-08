@@ -17,6 +17,7 @@ class SkillWheel extends React.Component {
 		super(props)
 		this.handleClick = this.props.clickHandler
 		this.handleMouseOver = this.props.mouseoverHandler
+		this.handleMouseOver = this.handleMouseOver.bind(this)
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
 		this.dispatch = dispatch
@@ -82,7 +83,7 @@ class SkillWheel extends React.Component {
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
 			.attr("d", d => arc(d.current))
 			.on("click", this.handleClick)
-			.on("mouseover", this.handleMouseOver)
+			.on("mousemove", this.handleMouseOver)
 
 
 		path.filter(d => d.children)
@@ -127,7 +128,6 @@ class SkillWheel extends React.Component {
 			.attr("r", radius)
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
-			.on("mouseover", this.handleMouseOver)
 			.on("click", clicked);
 
 		function clicked(p) {
