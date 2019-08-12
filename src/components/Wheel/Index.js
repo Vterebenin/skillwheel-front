@@ -7,8 +7,7 @@ import { withFauxDOM } from 'react-faux-dom'
 import {
 	fetchAreaIfNeeded,
 } from '../../actions'
-
-
+import tippy from 'tippy.js'
 
 class SkillWheel extends React.Component {
 
@@ -24,9 +23,11 @@ class SkillWheel extends React.Component {
 		this.state = {
 			svgClass: false
 		}
+		this.title = this.props.title
 	}
 
 	componentDidMount() {
+		
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -79,7 +80,7 @@ class SkillWheel extends React.Component {
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
 			.style("font", "12px sans-serif");
-
+		
 		const g = svg.append("g")
 			.attr("transform", `translate(${width / 2},${width / 2})`);
 
@@ -110,8 +111,8 @@ class SkillWheel extends React.Component {
 			.style("cursor", "pointer")
 			.on("click", clicked)
 
-		path.append("title")
-			.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n`);
+		// path.append("title")
+		// 	.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n`);
 
 		let label = g.append("g")
 			.attr("pointer-events", "none")
@@ -139,13 +140,19 @@ class SkillWheel extends React.Component {
 			return e.parentNode
 		})
 
+		tippy('.sk-path-visible', {
+			content: this.title,
+			// delay: 200,
+			followCursor: true,
+			placement: "left-start"
+		})
 
 		const parent = g.append("circle")
 			.datum(root)
 			.attr("r", radius)
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
-			.on("click", clicked);
+			.on("click", clicked)
 
 		function clicked(p) {
 			parent.datum(p.parent || root);
@@ -192,8 +199,6 @@ class SkillWheel extends React.Component {
 					.on("mousemove", d => {
 						return arcVisible(d.current) ? mouseOverFunc(d.data.title, d) : false
 					})
-				console.log(pathVisible, "path-visible")
-
 			}, 800);
 
 

@@ -1,8 +1,12 @@
+html, body {
+  overflow-x: hidden;
+}
+
 .sk-wheel-foreign {
   overflow: visible;
 }
-.sk-wheel-parent,
-.sk-wheel-child {
+
+.sk-wheel-parent, .sk-wheel-child {
   transform: translateX(-50%);
   width: 160px;
   white-space: nowrap;
@@ -11,29 +15,74 @@
   position: absolute;
   right: 40px;
 }
+
 .sk-wheel-child {
   position: absolute;
 }
+
+@keyframes tooltipAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* sk-tooltip */
+
 .sk-tooltip {
   width: 10px;
   height: 10px;
   transform: translate(-50%, -50%);
-  background: red;
+  background: #222;
   border-radius: 50%;
   z-index: 11;
-  visibility: hidden;
-  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;  
+
+
 }
-@keyframes tooltipAppear {
-  from {
-    opacity: 0;
-    visibility: hidden;
-  }
-  to {
-    opacity: 1;
-    visibility: visible;
-  }
+:focus {
+  outline: none;
+
 }
 .sk-wheel-unvisible {
   pointer-events: none;
 }
+
+.sk-tooltip--name {
+  width: 250px;
+  padding: 10px;
+  position: absolute;
+  top: -58px;
+  font-size: 14px;
+  left: 50px;
+  vertical-align: bottom;
+  margin-top: -100%;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.sk-tooltip--connector {
+  width: 2px;
+  height: 70px;
+  background: #222;
+  transform: translate(-50%, -50%) rotate(45deg);
+  position: absolute;
+  left: 32px;
+  top: -22px;
+}
+
+/* 
+.sk-tooltip--connector:after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 250px;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 88px;
+  top: -212px;
+  background: red;
+} */

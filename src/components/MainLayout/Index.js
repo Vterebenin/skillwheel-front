@@ -39,9 +39,7 @@ class SiderDemo extends React.Component {
 			loading: false,
 		})
 	}
-
-
-
+	
 	onCollapse = collapsed => {
 		this.setState({ collapsed });
 	};
@@ -75,31 +73,21 @@ class SiderDemo extends React.Component {
 
 	mouseoverHandler(title, e, test) {
 		// console.log(content)
+		if (this.state.title !== title)
 		this.setState({
 			title: title,
 		})
-		this.setState({
-			coordinates: {
-				x: d3.event.pageX,
-				y: d3.event.pageY,
-				wheelX: this.divElement.getBoundingClientRect().left,
-				wheelY: this.divElement.getBoundingClientRect().top
-			},
-			wheelSize: {
-				width: this.divElement.clientHeight,
-				height: this.divElement.clientWidth
-			}
-		})
+		
 		// console.log(this.state);
 
 	}
 
 	render() {
 		const { user } = this.props
-		const { title, coordinates, wheelSize } = this.state
+		const { title } = this.state
 		return (
 			<MainWrapper>
-				<PieTitle title={title} coordinates={coordinates} wSize={wheelSize} />
+				{/* <PieTitle title={title} coordinates={coordinates} wSize={wheelSize} /> */}
 				<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1280px" }}>
 					<Breadcrumb style={{ margin: '16px 0' }}>
 						<Breadcrumb.Item>Мой профиль</Breadcrumb.Item>
@@ -129,7 +117,7 @@ class SiderDemo extends React.Component {
 					</Col>
 					<Col span={16}>
 						<div ref={(divElement) => this.divElement = divElement}>
-							<Wheel mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
+							<Wheel title={title} mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
 						</div>
 					</Col>
 				</Row>
