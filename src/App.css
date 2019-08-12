@@ -46,8 +46,12 @@ html, body {
   outline: none;
 
 }
-.sk-wheel-unvisible {
-  pointer-events: none;
+.sk-path-visible {
+  cursor: pointer;
+  transition: fill-opacity 0.35s, transform 0.35s;
+}
+.sk-path-visible:hover {
+  transform: scale(1.1)
 }
 
 .sk-tooltip--name {

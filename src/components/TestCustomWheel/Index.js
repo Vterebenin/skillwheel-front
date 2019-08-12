@@ -4,8 +4,6 @@ import './style.css';
 export default class Index extends Component {
 
   handleMouseEnter(e) {
-    console.log(e.target.dataset.group);
-    console.log(document.getElementById(`chunk${e.target.dataset.group}`))
     const thisChunk = document.getElementById(`chunk${e.target.dataset.group}`);
     // const svgNode = document.getElementById('skill-wheel').childNodes;
     thisChunk.parentNode.appendChild(thisChunk);

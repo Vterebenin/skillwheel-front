@@ -14,36 +14,14 @@ class SkillWheel extends React.Component {
 	constructor(props) {
 		super(props)
 		this.handleClick = this.props.clickHandler
-		this.changeClassName = this.changeClassName.bind(this)
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
 		this.dispatch = dispatch
-		this.state = {
-			svgClass: false,
-			title: ''
-		}
 	}
 
-	componentDidMount() {
-		const {title} = this.props
-		this.setState({
-			title
-		})
-		
-	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.title !== prevProps.title) {
-			const {title} = this.props			
-			this.setState({
-				title: title
-			})
-			const skpath = document.querySelectAll('.sk-path-visible') 
-			console.log(skpath, "test");
-			
-			
-			// this.instance.setContent(title)
-		}
+	
 		if (this.props.areas !== prevProps.areas) {
 			const { dispatch, areas } = this.props
 			dispatch(fetchAreaIfNeeded())
@@ -57,7 +35,6 @@ class SkillWheel extends React.Component {
 				// если поставить 2, будет (общее количество - 1)кругов
 				return d3.partition().size([2 * Math.PI, root.height + 2])(root);
 			}
-			console.log(this.props, "sadfsadf");
 
 			const width = this.props.width || 700;
 			const radius = width / 6
@@ -68,7 +45,7 @@ class SkillWheel extends React.Component {
 				.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
 				.padRadius(radius * 1.5)
 				// внутренний радиус
-				.innerRadius(d => d.y0 * radius - 75)
+				.innerRadius(d => radius - 40)
 				// внешний
 				.outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius))
 
@@ -76,24 +53,15 @@ class SkillWheel extends React.Component {
 		}
 	}
 
-	changeClassName() {
-		this.setState({
-			svgClass: false,
-		})
-		let test = d3.selectAll("sk-wheel-child")
-		console.log(test);
-	}
-
 
 	// 🌟немного магии🌟🐽
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
-		const changeClassName = this.changeClassName
 		root.each(d => d.current = d);
-		console.log(root.descendants().slice(1));
 		const svg = d3.select(this.viz)
-			.attr("viewBox", [0, 0, width, width])
-			.style("font", "12px sans-serif");
+			.attr("viewBox", [-50, -50, width+100, width+100])
+			.style("font", "12px sans-serif")
+			.style("margin", "-50px -50px 0 -50px")
 		
 		const g = svg.append("g")
 			.attr("transform", `translate(${width / 2},${width / 2})`);
@@ -106,7 +74,6 @@ class SkillWheel extends React.Component {
 			.attr("id", d => d.data.id)
 			.attr("data-name", d => d.data.title)
 			.attr("data-tippy-content", d => d.data.title)
-			// цвет интенсивности закраски чанков 
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
 			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-path-visible" : "sk-path-visible") : "sk-path-invisible")
 			.attr("d", d => arc(d.current))
@@ -115,11 +82,8 @@ class SkillWheel extends React.Component {
 
 
 		path.filter(d => d.children)
-			.style("cursor", "pointer")
+			// .style("cursor", "pointer")
 			.on("click", clicked)
-
-		// path.append("title")
-		// 	.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n`);
 
 		let label = g.append("g")
 			.attr("pointer-events", "none")
@@ -140,10 +104,6 @@ class SkillWheel extends React.Component {
 
 		// переопределение таргета лейбла с дива на foreignObject
 		label._groups[0] = label._groups[0].map(e => {
-			// var t = document.createElement('div')
-			// let element = e.parentNode.insertBefore(t, this.nextSibling)
-			// element.setAttribute("class", "supertest")
-			// element.innerHTML = e.innerHTML
 			return e.parentNode
 		})
 
@@ -156,13 +116,16 @@ class SkillWheel extends React.Component {
 			.attr("pointer-events", "all")
 			.on("click", clicked)
 
+		function initTippy() {
+			tippy('.sk-path-visible', {
+				arrow: true,
+				delay: [250, 0],
+				followCursor: true,
+				placement: "left-start",
+			})
+		}
+		initTippy()
 		
-		tippy('.sk-path-visible', {
-			arrow: true,
-			delay: [250, 0],
-			followCursor: true,
-			placement: "left-start",
-		})
 
 		function clicked(p) {
 			parent.datum(p.parent || root);
@@ -177,7 +140,6 @@ class SkillWheel extends React.Component {
 
 			// время анимации в милисекундах
 			const t = g.transition().duration(750);
-			changeClassName();
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
 			// the next transition from the desired position.
@@ -211,17 +173,8 @@ class SkillWheel extends React.Component {
 
 			clearTimeout();
 			setTimeout(() => {
-				
-				tippy('.sk-path-visible', {
-					arrow: true,
-					delay: [250, 0],
-					followCursor: true,
-					placement: "left-start",
-				})
+				initTippy()
 			}, 800);
-
-		
-			
 			
 
 			label.filter(function (d) {
@@ -229,7 +182,6 @@ class SkillWheel extends React.Component {
 			}).transition(t)
 				.attr("opacity", d => +labelVisible(d.target))
 				.attrTween("transform", d => () => labelTransform(d.current))
-			// .selectAll('.sk-wheel-text').node().classList.add("mynewclass");
 
 		}
 
@@ -252,9 +204,7 @@ class SkillWheel extends React.Component {
 
 
 	render() {
-		const { svgClass } = this.state
 		const { width, height, areas } = this.props;
-		console.log(svgClass)
 		return (
 			<React.Fragment>
 				{areas ? (

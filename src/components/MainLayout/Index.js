@@ -46,7 +46,6 @@ class SiderDemo extends React.Component {
 	skillClick(content) {
 		const { dispatch } = this.props
 		dispatch(getSkill(content.data.id))
-		console.log(this);
 
 		if (this.state.skillId !== null) {
 			this.setState({

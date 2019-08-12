@@ -168,7 +168,6 @@ function findSkill(obj, id) {
 export function getSkillName(skillId) {
   return (dispatch, getState) => {
     const { user } = getState().userAreas;
-    console.log(user)
     let currentSkill = findSkill(user, skillId);
 
     dispatch(getCurrentSKillName(skillId, currentSkill));
