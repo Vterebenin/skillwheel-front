@@ -68,13 +68,14 @@ class SkillWheel extends React.Component {
 		let test = d3.selectAll("sk-wheel-child")
 		console.log(test);
 	}
-	
+
 
 	// 🌟немного магии🌟🐽
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
 		const changeClassName = this.changeClassName
 		root.each(d => d.current = d);
+		console.log(root.descendants().slice(1));
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
 			.style("font", "12px sans-serif");
@@ -89,14 +90,21 @@ class SkillWheel extends React.Component {
 			.attr("fill", d => { return d.data.color })
 			.attr("id", d => d.data.id)
 			.attr("data-name", d => d.data.title)
-
 			// цвет интенсивности закраски чанков 
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
-			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-wheel-visible" : "sk-wheel-unvisible") : "sk-wheel-unvisible")
+			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-path-visible" : "sk-path-visible") : "")
 			.attr("d", d => arc(d.current))
 			.on("click", this.handleClick)
-			.on("mousemove", this.handleMouseOver)
 
+
+		const mouseOverFunc = this.handleMouseOver.bind(this)
+		let pathVisible = d3
+			.selectAll(".sk-path-visible")
+			.on("mousemove", d => {
+				return arcVisible(d.current) ? mouseOverFunc(d.data.title, d) : false
+			})
+
+		console.log(pathVisible, "path-visible")
 
 		path.filter(d => d.children)
 			.style("cursor", "pointer")
@@ -130,7 +138,7 @@ class SkillWheel extends React.Component {
 			// element.innerHTML = e.innerHTML
 			return e.parentNode
 		})
-		
+
 
 		const parent = g.append("circle")
 			.datum(root)
@@ -156,6 +164,7 @@ class SkillWheel extends React.Component {
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
 			// the next transition from the desired position.
+
 			path.transition(t)
 				.tween("data", d => {
 					const i = d3.interpolate(d.current, d.target);
@@ -165,19 +174,37 @@ class SkillWheel extends React.Component {
 					return +this.getAttribute("fill-opacity") || arcVisible(d.target);
 				})
 				.attr("fill-opacity", d => {
-					arcVisible(d.target) ? d3.select(this).node().setAttribute("class", "test") : d3.select(this).node()
-					console.log(d3.select(this).node(), "sdfasdf")
-					console.log(arcVisible(d.target))
+					// arcVisible(d.target) ? d3.select(d).node().setAttribute("class", "testss") : d3.select(this).node()
 					return arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0
 				})
+				.attr("class", d => {
+					return arcVisible(d.target) ? (d.children ? "sk-path-visible" : "sk-path-visible") : ""
+				})
 				.attrTween("d", d => () => arc(d.current));
-			
+
+			pathVisible = d3.selectAll(".sk-path-visible")
+
+
+			clearTimeout();
+			setTimeout(() => {
+				pathVisible = d3
+					.selectAll(".sk-path-visible")
+					.on("mousemove", d => {
+						return arcVisible(d.current) ? mouseOverFunc(d.data.title, d) : false
+					})
+				console.log(pathVisible, "path-visible")
+
+			}, 800);
+
+
+
 			label.filter(function (d) {
 				return +this.getAttribute("opacity") || labelVisible(d.target);
 			}).transition(t)
 				.attr("opacity", d => +labelVisible(d.target))
 				.attrTween("transform", d => () => labelTransform(d.current))
 			// .selectAll('.sk-wheel-text').node().classList.add("mynewclass");
+
 		}
 
 		function arcVisible(d) {
@@ -209,8 +236,8 @@ class SkillWheel extends React.Component {
 						width={width} height={height} >
 					</svg>
 				) : (
-					<Loader />
-				)}
+						<Loader />
+					)}
 
 			</React.Fragment>
 		);

@@ -28,7 +28,7 @@ class SiderDemo extends React.Component {
 				height: 0
 			}
 		};
-	
+
 		this.onButtonClick = this.onButtonClick.bind(this)
 		this.skillClick = this.skillClick.bind(this)
 		this.mouseoverHandler = this.mouseoverHandler.bind(this)
@@ -61,7 +61,7 @@ class SiderDemo extends React.Component {
 		const { dispatch } = this.props
 		dispatch(getSkill(content.data.id))
 		console.log(this);
-		
+
 		if (this.state.skillId !== null) {
 			this.setState({
 				content: false
@@ -73,20 +73,12 @@ class SiderDemo extends React.Component {
 		// console.log(e.screenX)
 	}
 
-	mouseoverHandler(e) {
+	mouseoverHandler(title, e, test) {
 		// console.log(content)
-		// console.log(e, "data")
-		if (e.data.children !== undefined) {
-			this.setState({
-				title: e.data.title,
-			})
-		} else {
-			this.setState({
-				title: null,
-			})
-		}
 		this.setState({
-			// title: e.data.title,
+			title: title,
+		})
+		this.setState({
 			coordinates: {
 				x: d3.event.pageX,
 				y: d3.event.pageY,
@@ -136,8 +128,8 @@ class SiderDemo extends React.Component {
 
 					</Col>
 					<Col span={16}>
-						<div ref={ (divElement) => this.divElement = divElement}>
-							<Wheel  mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
+						<div ref={(divElement) => this.divElement = divElement}>
+							<Wheel mouseoverHandler={this.mouseoverHandler} clickHandler={this.skillClick} />
 						</div>
 					</Col>
 				</Row>
