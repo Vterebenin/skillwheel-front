@@ -34,3 +34,6 @@
     visibility: visible;
   }
 }
+.sk-wheel-unvisible {
+  pointer-events: none;
+}

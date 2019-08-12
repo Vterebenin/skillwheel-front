@@ -7,7 +7,6 @@ import { withFauxDOM } from 'react-faux-dom'
 import {
 	fetchAreaIfNeeded,
 } from '../../actions'
-import { Tooltip } from "antd";
 
 
 
@@ -18,9 +17,13 @@ class SkillWheel extends React.Component {
 		this.handleClick = this.props.clickHandler
 		this.handleMouseOver = this.props.mouseoverHandler
 		this.handleMouseOver = this.handleMouseOver.bind(this)
+		this.changeClassName = this.changeClassName.bind(this)
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
 		this.dispatch = dispatch
+		this.state = {
+			svgClass: false
+		}
 	}
 
 	componentDidMount() {
@@ -58,11 +61,19 @@ class SkillWheel extends React.Component {
 		}
 	}
 
+	changeClassName() {
+		this.setState({
+			svgClass: false,
+		})
+		let test = d3.selectAll("sk-wheel-child")
+		console.log(test);
+	}
 	
 
 	// 🌟немного магии🌟🐽
 	charts(partition, data, d3, width, arc, radius) {
 		const root = partition(data);
+		const changeClassName = this.changeClassName
 		root.each(d => d.current = d);
 		const svg = d3.select(this.viz)
 			.attr("viewBox", [0, 0, width, width])
@@ -81,6 +92,7 @@ class SkillWheel extends React.Component {
 
 			// цвет интенсивности закраски чанков 
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
+			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-wheel-visible" : "sk-wheel-unvisible") : "sk-wheel-unvisible")
 			.attr("d", d => arc(d.current))
 			.on("click", this.handleClick)
 			.on("mousemove", this.handleMouseOver)
@@ -93,8 +105,6 @@ class SkillWheel extends React.Component {
 		path.append("title")
 			.text(d => `${d.ancestors().map(d => d.data.title).reverse().join("/")}\n`);
 
-		let newEl = <Tooltip>123</Tooltip>
-		console.log(newEl);
 		let label = g.append("g")
 			.attr("pointer-events", "none")
 			.attr("text-anchor", "middle")
@@ -122,7 +132,6 @@ class SkillWheel extends React.Component {
 		})
 		
 
-
 		const parent = g.append("circle")
 			.datum(root)
 			.attr("r", radius)
@@ -143,6 +152,7 @@ class SkillWheel extends React.Component {
 
 			// время анимации в милисекундах
 			const t = g.transition().duration(750);
+			changeClassName();
 			// Transition the data on all arcs, even the ones that aren’t visible,
 			// so that if this transition is interrupted, entering arcs will start
 			// the next transition from the desired position.
@@ -154,10 +164,14 @@ class SkillWheel extends React.Component {
 				.filter(function (d) {
 					return +this.getAttribute("fill-opacity") || arcVisible(d.target);
 				})
-				.attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
+				.attr("fill-opacity", d => {
+					arcVisible(d.target) ? d3.select(this).node().setAttribute("class", "test") : d3.select(this).node()
+					console.log(d3.select(this).node(), "sdfasdf")
+					console.log(arcVisible(d.target))
+					return arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0
+				})
 				.attrTween("d", d => () => arc(d.current));
-
-
+			
 			label.filter(function (d) {
 				return +this.getAttribute("opacity") || labelVisible(d.target);
 			}).transition(t)
@@ -185,8 +199,9 @@ class SkillWheel extends React.Component {
 
 
 	render() {
-		const { width, height } = this.props;
-		const { areas } = this.props
+		const { svgClass } = this.state
+		const { width, height, areas } = this.props;
+		console.log(svgClass)
 		return (
 			<React.Fragment>
 				{areas ? (

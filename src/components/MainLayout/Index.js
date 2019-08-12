@@ -32,8 +32,6 @@ class SiderDemo extends React.Component {
 		this.onButtonClick = this.onButtonClick.bind(this)
 		this.skillClick = this.skillClick.bind(this)
 		this.mouseoverHandler = this.mouseoverHandler.bind(this)
-
-
 	}
 
 	componentDidMount() {
@@ -72,25 +70,35 @@ class SiderDemo extends React.Component {
 	}
 
 	mousemoveWheel(e) {
-		console.log(e.screenX)
+		// console.log(e.screenX)
 	}
 
 	mouseoverHandler(e) {
 		// console.log(content)
+		// console.log(e, "data")
+		if (e.data.children !== undefined) {
+			this.setState({
+				title: e.data.title,
+			})
+		} else {
+			this.setState({
+				title: null,
+			})
+		}
 		this.setState({
-			title: e.data.title,
+			// title: e.data.title,
 			coordinates: {
 				x: d3.event.pageX,
 				y: d3.event.pageY,
-				wheelX: this.divElement.offsetLeft,
-				wheelY: this.divElement.offsetTop
+				wheelX: this.divElement.getBoundingClientRect().left,
+				wheelY: this.divElement.getBoundingClientRect().top
 			},
 			wheelSize: {
 				width: this.divElement.clientHeight,
 				height: this.divElement.clientWidth
 			}
 		})
-		console.log(this.state);
+		// console.log(this.state);
 
 	}
 
