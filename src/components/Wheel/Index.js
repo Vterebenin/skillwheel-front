@@ -14,27 +14,40 @@ class SkillWheel extends React.Component {
 	constructor(props) {
 		super(props)
 		this.handleClick = this.props.clickHandler
-		this.handleMouseOver = this.props.mouseoverHandler
-		this.handleMouseOver = this.handleMouseOver.bind(this)
 		this.changeClassName = this.changeClassName.bind(this)
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
 		this.dispatch = dispatch
 		this.state = {
-			svgClass: false
+			svgClass: false,
+			title: ''
 		}
-		this.title = this.props.title
 	}
 
 	componentDidMount() {
+		const {title} = this.props
+		this.setState({
+			title
+		})
 		
 	}
 
 	componentDidUpdate(prevProps, prevState) {
+		if (this.props.title !== prevProps.title) {
+			const {title} = this.props			
+			this.setState({
+				title: title
+			})
+			const skpath = document.querySelectAll('.sk-path-visible') 
+			console.log(skpath, "test");
+			
+			
+			// this.instance.setContent(title)
+		}
 		if (this.props.areas !== prevProps.areas) {
 			const { dispatch, areas } = this.props
 			dispatch(fetchAreaIfNeeded())
-
+			
 			const partition = data => {
 				const root = d3.hierarchy(data)
 					.sum(d => d.value)
@@ -44,6 +57,7 @@ class SkillWheel extends React.Component {
 				// если поставить 2, будет (общее количество - 1)кругов
 				return d3.partition().size([2 * Math.PI, root.height + 2])(root);
 			}
+			console.log(this.props, "sadfsadf");
 
 			const width = this.props.width || 700;
 			const radius = width / 6
@@ -91,21 +105,14 @@ class SkillWheel extends React.Component {
 			.attr("fill", d => { return d.data.color })
 			.attr("id", d => d.data.id)
 			.attr("data-name", d => d.data.title)
+			.attr("data-tippy-content", d => d.data.title)
 			// цвет интенсивности закраски чанков 
 			.attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
-			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-path-visible" : "sk-path-visible") : "")
+			.attr("class", d => arcVisible(d.current) ? (d.children ? "sk-path-visible" : "sk-path-visible") : "sk-path-invisible")
 			.attr("d", d => arc(d.current))
 			.on("click", this.handleClick)
 
 
-		const mouseOverFunc = this.handleMouseOver.bind(this)
-		let pathVisible = d3
-			.selectAll(".sk-path-visible")
-			.on("mousemove", d => {
-				return arcVisible(d.current) ? mouseOverFunc(d.data.title, d) : false
-			})
-
-		console.log(pathVisible, "path-visible")
 
 		path.filter(d => d.children)
 			.style("cursor", "pointer")
@@ -140,12 +147,7 @@ class SkillWheel extends React.Component {
 			return e.parentNode
 		})
 
-		tippy('.sk-path-visible', {
-			content: this.title,
-			// delay: 200,
-			followCursor: true,
-			placement: "left-start"
-		})
+		
 
 		const parent = g.append("circle")
 			.datum(root)
@@ -153,6 +155,14 @@ class SkillWheel extends React.Component {
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
 			.on("click", clicked)
+
+		
+		tippy('.sk-path-visible', {
+			arrow: true,
+			delay: [250, 0],
+			followCursor: true,
+			placement: "left-start",
+		})
 
 		function clicked(p) {
 			parent.datum(p.parent || root);
@@ -185,23 +195,34 @@ class SkillWheel extends React.Component {
 					return arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0
 				})
 				.attr("class", d => {
-					return arcVisible(d.target) ? (d.children ? "sk-path-visible" : "sk-path-visible") : ""
+					return arcVisible(d.target) ? (d.children ? "sk-path-visible" : "sk-path-visible") : "sk-path-invisible"
 				})
 				.attrTween("d", d => () => arc(d.current));
 
-			pathVisible = d3.selectAll(".sk-path-visible")
 
+
+			const visPaths = document.querySelectorAll('.sk-path-visible')
+			visPaths.forEach(e => {
+				const instance = tippy(e)
+				if (instance) {
+					instance.destroy();
+				}
+			})
 
 			clearTimeout();
 			setTimeout(() => {
-				pathVisible = d3
-					.selectAll(".sk-path-visible")
-					.on("mousemove", d => {
-						return arcVisible(d.current) ? mouseOverFunc(d.data.title, d) : false
-					})
+				
+				tippy('.sk-path-visible', {
+					arrow: true,
+					delay: [250, 0],
+					followCursor: true,
+					placement: "left-start",
+				})
 			}, 800);
 
-
+		
+			
+			
 
 			label.filter(function (d) {
 				return +this.getAttribute("opacity") || labelVisible(d.target);

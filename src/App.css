@@ -73,7 +73,9 @@ html, body {
   left: 32px;
   top: -22px;
 }
-
+.sk-path-invisible {
+  pointer-events: none;
+}
 /* 
 .sk-tooltip--connector:after {
   content: '';

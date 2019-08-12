@@ -1,9 +1,8 @@
 {
   "name": "skillwheel",
   "version": "0.1.0",
-  "homepage": "https://vterebenin.github.io/skillwheel-front/",
+  "homepage": "http://Vterebenin.github.io/skillwheel-front",
   "private": true,
-  "homepage" : "http://Vterebenin.github.io/skillwheel-front",
   "dependencies": {
     "antd": "^3.20.5",
     "cross-fetch": "^3.0.4",
