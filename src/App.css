@@ -1,37 +1,88 @@
-.App {
-  text-align: center;
+html, body {
+  overflow-x: hidden;
 }
-#components-layout-demo-side .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+
+.sk-wheel-foreign {
+  overflow: visible;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+
+.sk-wheel-parent, .sk-wheel-child {
+  transform: translateX(-50%);
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  right: 40px;
+}
+
+.sk-wheel-child {
+  position: absolute;
+}
+
+@keyframes tooltipAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* sk-tooltip */
+
+.sk-tooltip {
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  background: #222;
+  border-radius: 50%;
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;  
+
+
+}
+:focus {
+  outline: none;
+
+}
+.sk-wheel-unvisible {
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sk-tooltip--name {
+  width: 250px;
+  padding: 10px;
+  position: absolute;
+  top: -58px;
+  font-size: 14px;
+  left: 50px;
+  vertical-align: bottom;
+  margin-top: -100%;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.sk-tooltip--connector {
+  width: 2px;
+  height: 70px;
+  background: #222;
+  transform: translate(-50%, -50%) rotate(45deg);
+  position: absolute;
+  left: 32px;
+  top: -22px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* 
+.sk-tooltip--connector:after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 250px;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 88px;
+  top: -212px;
+  background: red;
+} */

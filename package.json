@@ -1,19 +1,33 @@
 {
   "name": "skillwheel",
   "version": "0.1.0",
+  "homepage": "https://vterebenin.github.io/skillwheel-front/",
   "private": true,
   "homepage" : "http://Vterebenin.github.io/skillwheel-front",
   "dependencies": {
     "antd": "^3.20.5",
+    "cross-fetch": "^3.0.4",
+    "d3": "^5.9.7",
+    "gh-pages": "^2.0.1",
+    "lodash": ">=4.17.13",
+    "observable-slim": "^0.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-faux-dom": "^4.5.0",
+    "react-redux": "^7.1.0",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "tippy.js": "^4.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
