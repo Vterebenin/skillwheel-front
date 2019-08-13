@@ -123,6 +123,15 @@ export function getSkill(skillId) {
   return (dispatch, getState) => {
     const { user } = getState().userAreas;
     let currentSkill = findSkill(user, skillId);
+
+    // работа с классами
+    const allvisible = document.querySelectorAll(".sk-path-visible")
+		allvisible.forEach(element => {
+			element.classList.remove("sk-path-active")
+		});
+		const currentActive = document.getElementById(skillId)
+    currentActive.classList.add("sk-path-active")
+    
     dispatch(getCurrentSKill(skillId, currentSkill));
   }
 }

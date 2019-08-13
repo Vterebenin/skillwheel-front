@@ -50,7 +50,8 @@ html, body {
   cursor: pointer;
   transition: fill-opacity 0.35s, transform 0.35s;
 }
-.sk-path-visible:hover {
+.sk-path-visible:hover, 
+.sk-path-active {
   transform: scale(1.1)
 }
 

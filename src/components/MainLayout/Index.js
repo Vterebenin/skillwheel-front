@@ -7,8 +7,6 @@ import SkillContent from '../SkillContent/Index'
 import { connect } from 'react-redux';
 import { getSkill } from '../../actions';
 import MainWrapper from "../MainWrapper/Index";
-// сторонние
-
 
 
 class SiderDemo extends React.Component {
@@ -46,7 +44,6 @@ class SiderDemo extends React.Component {
 	skillClick(content) {
 		const { dispatch } = this.props
 		dispatch(getSkill(content.data.id))
-
 		if (this.state.skillId !== null) {
 			this.setState({
 				content: false

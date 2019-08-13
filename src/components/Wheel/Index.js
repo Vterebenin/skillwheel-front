@@ -137,7 +137,6 @@ class SkillWheel extends React.Component {
 					y1: Math.max(0, d.y1 - p.depth)
 				}
 			});
-
 			// время анимации в милисекундах
 			const t = g.transition().duration(750);
 			// Transition the data on all arcs, even the ones that aren’t visible,
