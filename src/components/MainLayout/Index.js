@@ -20,16 +20,7 @@ class SiderDemo extends React.Component {
 		this.skillClick = this.skillClick.bind(this)
 	}
 
-	componentDidMount() {
-		this.setState({
-			loading: false,
-		})
-	}
-	
-	onCollapse = collapsed => {
-		this.setState({ collapsed });
-	};
-
+	// обработчик для клика кнопки смены контента и профиля
 	onButtonClick = () => {
 		if (this.state.skillId !== null) {
 			this.setState({
@@ -40,7 +31,7 @@ class SiderDemo extends React.Component {
 		}
 	}
 
-
+	// обработчик для кликов на скиллы(2-ой уровень)
 	skillClick(content) {
 		const { dispatch } = this.props
 		dispatch(getSkill(content.data.id))
@@ -56,7 +47,7 @@ class SiderDemo extends React.Component {
 		const { user } = this.props
 		return (
 			<MainWrapper>
-				<Row gutter={100} style={{ margin: '0 auto', maxWidth: "1280px" }}>
+				<Row gutter={100} className="w-contentWrapper">
 					<Breadcrumb style={{ margin: '16px 0' }}>
 						<Breadcrumb.Item>Мой профиль</Breadcrumb.Item>
 						{user && <Breadcrumb.Item>{user.name}</Breadcrumb.Item>}
@@ -96,10 +87,8 @@ class SiderDemo extends React.Component {
 function mapStateToProps(state) {
 	const { skillId } = state.skillOfClickedArea
 	const { user } = state.selectedUser
-	const { skillname } = state.nameOfHoveredArea
 	return {
 		user,
-		skillname,
 		skillId,
 	}
 }
