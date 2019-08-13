@@ -2,10 +2,19 @@ html, body {
   overflow-x: hidden;
 }
 .w-contentWrapper.w-contentWrapper {
-  margin: 0 auto;
+  margin: 0 auto !important;
   max-width: 1280px;
 }
-
+.sk-circle-text {
+  opacity: 0;
+  cursor: "pointer";
+  transition: opacity 0.75s;
+  animation: tooltipAppear ease 0.75s 1;
+  animation-fill-mode: forwards;
+}
+circle {
+  cursor: "pointer";
+}
 .sk-wheel-foreign {
   overflow: visible;
 }

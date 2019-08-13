@@ -16,7 +16,6 @@ class SkillWheel extends React.Component {
 		this.handleClick = this.props.clickHandler
 		const { dispatch } = this.props
 		dispatch(fetchAreaIfNeeded())
-		this.dispatch = dispatch
 	}
 
 
@@ -111,7 +110,7 @@ class SkillWheel extends React.Component {
 
 		const parent = g.append("circle")
 			.datum(root)
-			.attr("r", radius)
+			.attr("r", radius-40)
 			.attr("fill", "none")
 			.attr("pointer-events", "all")
 			.on("click", clicked)
@@ -128,6 +127,28 @@ class SkillWheel extends React.Component {
 		
 
 		function clicked(p) {
+			if (p.depth !== 0) {
+				g
+				// .append("<text x='50%' y='50%' text-anchor='middle' stroke='#51c5cf' stroke-width='2px' dy='.3em'>Look, I’m centered!Look, I’m centered!</text>")
+					.append("text")
+					.attr("class", "sk-circle-text")
+					.attr("x", "0")
+					.attr("y", "-80px")
+					.attr("text-anchor", "middle")
+					.attr("fill", "#222")
+					.attr("dy", "3em")
+					.style("font-size", 30)
+					.style("cursor", "pointer")
+					.style("pointer-events", "none")
+					// .style("opacity", 1)
+					.html("Назад")
+
+
+			} else {
+				let text = d3.selectAll(".sk-circle-text")
+				text.remove()
+				// parent.attr("fill", "none")
+			}
 			parent.datum(p.parent || root);
 			root.each(d => {
 				d.target = {
