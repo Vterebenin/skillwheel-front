@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { connect } from 'react-redux'
 import Loader from '../Loader/Index'
 // эта библиотека, возможно, увеличит производительность ¯\_(ツ)_/¯
-import { withFauxDOM } from 'react-faux-dom'
+// import { withFauxDOM } from 'react-faux-dom'
 import {
 	fetchAreaIfNeeded,
 } from '../../actions'
@@ -249,4 +249,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(withFauxDOM(SkillWheel))
+export default connect(mapStateToProps)(SkillWheel)
