@@ -216,7 +216,7 @@ class SkillWheel extends React.Component {
 		function labelTransform(d) {
 			const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
 			const y = (d.y0 + d.y1) / 2 * radius - 10;
-			return `rotate(${x - 90}) translate(${y}, 10) rotate(${x < 180 ? 0 : 180})`;
+			return `rotate(${x - 90}) translate(${y-10}, 10) rotate(${x < 180 ? 5 : 180})`;
 		}
 
 		return svg.node();
