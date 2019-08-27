@@ -27,8 +27,11 @@
 🐱‍👤 Компонент  `SkillContent` появляется при нажатии на скилл второго уровня, выводя подробную информацию о скиле.
 
 Файлы редакса:
+
 👌Экшены: [src/actions.js](https://github.com/Vterebenin/skillwheel-front/blob/master/src/actions.js)
+
 👆Конфигурация стора: [src/configureStore.js](https://github.com/Vterebenin/skillwheel-front/blob/master/src/configureStore.js)
+
 ✌Редюсеры: [src/reducers.js](https://github.com/Vterebenin/skillwheel-front/blob/master/src/reducers.js)
 
 
