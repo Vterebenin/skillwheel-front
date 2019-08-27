@@ -70,9 +70,11 @@ class SiderDemo extends React.Component {
 								)
 							}
 
-							{this.state.content ? (
-								<UserContent />
-							) : (
+							{this.state.content
+								? (
+									<UserContent />
+								)
+								: (
 									<SkillContent />
 								)}
 						</div>

@@ -21,7 +21,7 @@ export function fetchData(receive) {
     return fetch(`https://raw.githubusercontent.com/Vterebenin/skillwheel-front/master/fetchedData.json`)
       .then(response => response.json())
       .then(text => {
-        text = JSON.parse(encode_utf8(encode_utf8(text.toString())))
+        text = JSON.parse(encode_utf8(text.toString()))
         return text
       }).then(json => dispatch(receive(json)))
 
