@@ -53,7 +53,6 @@ class SkillWheel extends React.Component {
   }
 
 
-  // 🌟немного магии🌟🐽
   charts(partition, data, d3, width, arc, radius) {
     const root = partition(data);
     root.each(d => d.current = d);
