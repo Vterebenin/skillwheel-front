@@ -40,6 +40,21 @@ class SkillWheel extends React.Component {
       const arc = d3.arc()
         .startAngle(d => d.x0)
         .endAngle(d => d.x1)
+      // .startAngle(d => {
+      //     const parent = d.parent ? d.parent.children : ["123"]
+      //     console.log(parent.length);
+      //     const index =  parent.indexOf(d)+1; 
+      //     console.log(index);
+      //     return (Math.PI * 2 / parent.length)*index
+      //   })
+      //   .endAngle(d => {
+      //     const parent = d.parent ? d.parent.children : ["123"]
+      //     const index =  parent.indexOf(d)+1; 
+      //     console.log(index);
+      //     return (Math.PI * 2 / parent.length)*index+1
+      //   })
+
+
       // размер паддинга между чанками
         .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.01))
         .padRadius(radius * 1.5)
@@ -74,7 +89,10 @@ class SkillWheel extends React.Component {
       .attr("data-tippy-content", d => d.data.title)
       .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
       .attr("class", d => arcVisible(d.current) ? (d.children ? "sk-path-visible" : "sk-path-visible") : "sk-path-invisible")
-      .attr("d", d => arc(d.current))
+      .attr("d", d => {
+        console.log(d.current);
+        return arc(d.current)
+      })
       .on("click", this.handleClick)
 
 
