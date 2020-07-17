@@ -9,7 +9,7 @@
     "d3": "^5.9.7",
     "eslint-utils": "^1.4.2",
     "gh-pages": "^2.0.1",
-    "lodash": ">=4.17.13",
+    "lodash": ">=4.17.19",
     "observable-slim": "^0.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
